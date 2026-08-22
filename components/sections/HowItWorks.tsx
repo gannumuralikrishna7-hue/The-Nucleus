@@ -20,7 +20,7 @@ const steps = [
     icon: <Users size={22} />,
     title: "Invite Your Team",
     description: "Create user IDs and assign roles in seconds. Your whole team is onboarded in minutes.",
-    color: "#5C6BFF",
+    color: "#C86522",
     emoji: "👥",
   },
   {
@@ -28,7 +28,7 @@ const steps = [
     icon: <Link2 size={22} />,
     title: "Connect Your Tools",
     description: "Google Workspace, WhatsApp, and calling, all connected with one click. Zero manual imports.",
-    color: "#A78BFA",
+    color: "#B45318",
     emoji: "🔗",
   },
   {
@@ -36,7 +36,7 @@ const steps = [
     icon: <Rocket size={22} />,
     title: "Start Closing Deals",
     description: "AI guides your team from day one. See your pipeline, get suggestions, and close faster.",
-    color: "#22C55E",
+    color: "#A1A1AA",
     emoji: "🚀",
   },
 ];
@@ -49,7 +49,7 @@ export function HowItWorks() {
     <section className="relative py-24 lg:py-32">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(92,107,255,0.04) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(200,101,34,0.04) 0%, transparent 70%)" }}
         aria-hidden
       />
 
@@ -62,12 +62,12 @@ export function HowItWorks() {
           viewport={viewportOnce}
           className="text-center max-w-2xl mx-auto mb-20"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4">Get Started</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Get Started</p>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
             Up and Running in{" "}
             <GradientText>Minutes</GradientText>
           </h2>
-          <p className="text-[#94A3B8] text-lg">
+          <p className="text-[#A1A1AA] text-lg">
             From sign-up to first closed deal, the fastest CRM onboarding you&apos;ve ever experienced.
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export function HowItWorks() {
             <motion.div
               className="h-full"
               style={{
-                background: "linear-gradient(90deg, #5C6BFF, #A78BFA, #00E5FF, #22C55E)",
+                background: "linear-gradient(90deg, #C86522, #B45318, #E28A4B, #A1A1AA)",
                 transformOrigin: "left",
               }}
               initial={{ scaleX: 0 }}
@@ -174,7 +174,7 @@ export function HowItWorks() {
                 <div
                   key={i}
                   className="w-7 h-7 rounded-full border-2 border-[#0A0A0F] flex items-center justify-center text-[8px] font-bold text-white"
-                  style={{ background: `linear-gradient(135deg, ${["#5C6BFF","#A78BFA","#00E5FF"][i]}, ${["#A78BFA","#00E5FF","#5C6BFF"][i]})` }}
+                  style={{ background: `linear-gradient(135deg, ${["#C86522","#B45318","#E28A4B"][i]}, ${["#B45318","#E28A4B","#C86522"][i]})` }}
                 >
                   {init}
                 </div>
@@ -182,7 +182,7 @@ export function HowItWorks() {
             </div>
             <p className="text-sm text-white/60">
               <span className="text-white font-semibold">2,000+ teams</span> onboarded this month · Average setup time:{" "}
-              <span className="text-[#22C55E] font-semibold">17 minutes</span>
+              <span className="text-[#A1A1AA] font-semibold">17 minutes</span>
             </p>
           </div>
         </motion.div>

@@ -16,10 +16,7 @@ export function Stats() {
     <section className="relative py-20 border-y border-white/[0.06]">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(92,107,255,0.04) 0%, transparent 70%)",
-        }}
+        style={{ background: "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px)" }}
         aria-hidden
       />
 
@@ -45,12 +42,7 @@ export function Stats() {
               {/* Number */}
               <div
                 className="text-5xl lg:text-6xl font-black tracking-tighter mb-2"
-                style={{
-                  background: "linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
+                style={{ color: "#FFFFFF" }}
               >
                 <StatCounter value={stat.value} suffix={stat.suffix} decimals={stat.decimals} duration={2200} />
               </div>
@@ -59,11 +51,11 @@ export function Stats() {
               <div className="text-sm font-semibold text-white/80 mb-1">{stat.label}</div>
               <div className="text-xs text-white/30">{stat.description}</div>
 
-              {/* Hover glow */}
+                {/* Quiet hover surface */}
               <motion.div
                 className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: "radial-gradient(ellipse at center, rgba(92,107,255,0.06) 0%, transparent 70%)",
+                  background: "rgba(255,255,255,0.025)",
                 }}
                 aria-hidden
               />

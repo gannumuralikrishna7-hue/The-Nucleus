@@ -14,7 +14,7 @@ const plans = [
     monthlyPrice: 0,
     yearlyPrice: 0,
     description: "Perfect for individuals and small teams just getting started.",
-    color: "#94A3B8",
+    color: "#A1A1AA",
     featured: false,
     cta: "Get Started Free",
     ctaVariant: "secondary" as const,
@@ -34,7 +34,7 @@ const plans = [
     monthlyPrice: 29,
     yearlyPrice: 23,
     description: "For growing sales teams that need full power and AI intelligence.",
-    color: "#5C6BFF",
+    color: "#C86522",
     featured: true,
     cta: "Start Free Trial",
     ctaVariant: "primary" as const,
@@ -56,7 +56,7 @@ const plans = [
     monthlyPrice: null,
     yearlyPrice: null,
     description: "Custom solutions for large organizations with complex needs.",
-    color: "#A78BFA",
+    color: "#B45318",
     featured: false,
     cta: "Contact Sales",
     ctaVariant: "secondary" as const,
@@ -82,7 +82,7 @@ export function Pricing() {
       {/* Background */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 60% at 50% 60%, rgba(92,107,255,0.05) 0%, transparent 70%)" }}
+        style={{ background: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)" }}
         aria-hidden
       />
 
@@ -95,12 +95,12 @@ export function Pricing() {
           viewport={viewportOnce}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4">Pricing</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Pricing</p>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
             Simple Pricing.{" "}
             <GradientText>Powerful Platform.</GradientText>
           </h2>
-          <p className="text-[#94A3B8] text-lg">
+          <p className="text-[#A1A1AA] text-lg">
             Start free. Scale when you&apos;re ready. No surprises.
           </p>
         </motion.div>
@@ -118,8 +118,8 @@ export function Pricing() {
           </span>
           <button
             onClick={() => setIsAnnual(!isAnnual)}
-            className="relative w-14 h-7 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5C6BFF]"
-            style={{ background: isAnnual ? "rgba(92,107,255,0.8)" : "rgba(255,255,255,0.12)" }}
+            className="relative w-14 h-7 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C86522]"
+            style={{ background: isAnnual ? "rgba(200,101,34,0.8)" : "rgba(255,255,255,0.12)" }}
             role="switch"
             aria-checked={isAnnual}
             aria-label="Toggle annual billing"
@@ -135,7 +135,7 @@ export function Pricing() {
             <motion.span
               animate={{ scale: isAnnual ? 1 : 0.85, opacity: isAnnual ? 1 : 0.6 }}
               className="text-xs px-2 py-0.5 rounded-full font-bold"
-              style={{ background: "rgba(34,197,94,0.15)", color: "#22C55E" }}
+              style={{ background: "rgba(161,161,170,0.15)", color: "#A1A1AA" }}
             >
               Save 20%
             </motion.span>
@@ -163,8 +163,7 @@ export function Pricing() {
                   <div
                     className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full flex items-center gap-1.5"
                     style={{
-                      background: "linear-gradient(135deg, #5C6BFF, #A78BFA)",
-                      boxShadow: "0 4px 20px rgba(92,107,255,0.4)",
+                      background: "#FFFFFF",
                     }}
                   >
                     <Zap size={10} className="text-white" />
@@ -176,29 +175,15 @@ export function Pricing() {
               <div
                 className="relative rounded-2xl overflow-hidden flex flex-col p-7 h-full"
                 style={{
-                  background: plan.featured
-                    ? "linear-gradient(180deg, rgba(92,107,255,0.08) 0%, rgba(17,24,39,0.8) 100%)"
-                    : "rgba(17,24,39,0.5)",
-                  backdropFilter: "blur(20px)",
+                  background: plan.featured ? "#18181B" : "#111113",
                   border: plan.featured
-                    ? "1px solid rgba(92,107,255,0.35)"
+                    ? "1px solid rgba(200,101,34,0.35)"
                     : "1px solid rgba(255,255,255,0.07)",
-                  boxShadow: plan.featured
-                    ? "0 0 60px rgba(92,107,255,0.12), 0 20px 60px rgba(0,0,0,0.3)"
-                    : "0 8px 32px rgba(0,0,0,0.2)",
+                  boxShadow: "none",
                   transform: plan.featured ? "scale(1.05)" : "scale(1)",
                   paddingTop: plan.featured ? "40px" : "28px",
                 }}
               >
-                {/* Inner gradient */}
-                {plan.featured && (
-                  <div
-                    className="absolute inset-0 pointer-events-none rounded-2xl"
-                    style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 60%)" }}
-                    aria-hidden
-                  />
-                )}
-
                 <div className="relative z-10">
                   {/* Plan name */}
                   <div className="flex items-center justify-between mb-2">
@@ -238,7 +223,7 @@ export function Pricing() {
                   </div>
 
                   {isAnnual && plan.monthlyPrice !== null && plan.monthlyPrice > 0 && (
-                    <div className="text-xs text-[#22C55E] mb-4">
+                    <div className="text-xs text-[#A1A1AA] mb-4">
                       Billed annually · Save ${(plan.monthlyPrice - (plan.yearlyPrice || 0)) * 12}/seat/year
                     </div>
                   )}

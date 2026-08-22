@@ -11,12 +11,10 @@ import { Pricing } from "@/components/sections/Pricing";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 
 export default function Home() {
   return (
     <>
-      <CustomCursor />
       <Navbar />
       <main id="main">
         <Hero />

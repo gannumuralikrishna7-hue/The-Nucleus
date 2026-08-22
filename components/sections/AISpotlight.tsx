@@ -9,8 +9,8 @@ import { fadeUp, viewportOnce, staggerContainer } from "@/lib/animations";
 const aiCards = [
   {
     icon: <Target size={22} />,
-    iconColor: "#00E5FF",
-    iconBg: "rgba(0,229,255,0.12)",
+    iconColor: "#E28A4B",
+    iconBg: "rgba(226,138,75,0.12)",
     title: "Know Who to Reach Next",
     description:
       "The Nucleus AI analyzes engagement signals: emails opened, calls answered, and proposals viewed. It tells your team exactly which lead to prioritize right now.",
@@ -18,12 +18,12 @@ const aiCards = [
     demo: (
       <div className="mt-4 space-y-2">
         {[
-          { name: "Meera Singh", score: 94, bar: "94%", color: "#22C55E", reason: "Viewed proposal 3x" },
-          { name: "Alex Johnson", score: 87, bar: "87%", color: "#5C6BFF", reason: "Replied to email" },
-          { name: "Ravi Kumar", score: 61, bar: "61%", color: "#A78BFA", reason: "Opened last week" },
+          { name: "Meera Singh", score: 94, bar: "94%", color: "#A1A1AA", reason: "Viewed proposal 3x" },
+          { name: "Alex Johnson", score: 87, bar: "87%", color: "#C86522", reason: "Replied to email" },
+          { name: "Ravi Kumar", score: 61, bar: "61%", color: "#B45318", reason: "Opened last week" },
         ].map((lead) => (
           <div key={lead.name} className="flex items-center gap-3">
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#A78BFA] flex items-center justify-center text-[8px] font-bold text-white flex-shrink-0">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-[8px] font-bold text-white flex-shrink-0">
               {lead.name[0]}
             </div>
             <div className="flex-1 min-w-0">
@@ -50,8 +50,8 @@ const aiCards = [
   },
   {
     icon: <PenSquare size={22} />,
-    iconColor: "#A78BFA",
-    iconBg: "rgba(167,139,250,0.12)",
+    iconColor: "#B45318",
+    iconBg: "rgba(180,83,24,0.12)",
     title: "Write the Perfect Email",
     description:
       "Context-aware email suggestions generated from conversation history, lead behavior, and CRM data, so your team never stares at a blank page again.",
@@ -60,10 +60,10 @@ const aiCards = [
       <div className="mt-4">
         <div
           className="rounded-lg p-3 border border-white/[0.07]"
-          style={{ background: "rgba(167,139,250,0.05)" }}
+          style={{ background: "rgba(180,83,24,0.05)" }}
         >
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-3 h-3 rounded-full bg-[#A78BFA]/60" />
+            <div className="w-3 h-3 rounded-full bg-[#B45318]/60" />
             <span className="text-[9px] text-white/30 font-mono">AI Draft, based on last 3 interactions</span>
           </div>
           <TypewriterText
@@ -75,8 +75,8 @@ const aiCards = [
   },
   {
     icon: <Bell size={22} />,
-    iconColor: "#5C6BFF",
-    iconBg: "rgba(92,107,255,0.12)",
+    iconColor: "#C86522",
+    iconBg: "rgba(200,101,34,0.12)",
     title: "Never Miss a Follow-Up",
     description:
       "Smart reminders and next-action recommendations so no deal slips through the cracks. The Nucleus tracks every touchpoint and knows when it's time to act.",
@@ -94,13 +94,13 @@ const aiCards = [
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 + 0.3 }}
-            className="flex items-start gap-2.5 p-2.5 rounded-lg border border-white/[0.06] hover:border-[#5C6BFF]/30 transition-colors"
-            style={{ background: item.urgent ? "rgba(92,107,255,0.07)" : "rgba(255,255,255,0.03)" }}
+            className="flex items-start gap-2.5 p-2.5 rounded-lg border border-white/[0.06] hover:border-[#C86522]/30 transition-colors"
+            style={{ background: item.urgent ? "rgba(200,101,34,0.07)" : "rgba(255,255,255,0.03)" }}
           >
             <span className="text-base flex-shrink-0">{item.icon}</span>
             <span className="text-[10px] text-white/70 leading-relaxed">{item.text}</span>
             {item.urgent && (
-              <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded font-bold flex-shrink-0" style={{ background: "rgba(92,107,255,0.2)", color: "#5C6BFF" }}>
+              <span className="ml-auto text-[9px] px-1.5 py-0.5 rounded font-bold flex-shrink-0" style={{ background: "rgba(200,101,34,0.2)", color: "#C86522" }}>
                 NOW
               </span>
             )}
@@ -122,7 +122,7 @@ function TypewriterText({ text }: { text: string }) {
     >
       {text}
       <motion.span
-        className="inline-block w-0.5 h-3 bg-[#A78BFA] ml-0.5 align-middle cursor-blink"
+        className="inline-block w-0.5 h-3 bg-[#B45318] ml-0.5 align-middle cursor-blink"
         animate={{ opacity: [1, 0, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
       />
@@ -141,7 +141,7 @@ export function AISpotlight() {
       />
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(92,107,255,0.06) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,101,34,0.06) 0%, transparent 70%)" }}
         aria-hidden
       />
 
@@ -154,12 +154,12 @@ export function AISpotlight() {
           viewport={viewportOnce}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#00E5FF] mb-4">AI Features</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#E28A4B] mb-4">AI Features</p>
           <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
-            <GradientText from="#5C6BFF" via="#00E5FF" to="#A78BFA">Intelligence</GradientText>{" "}
+            <GradientText from="#C86522" via="#E28A4B" to="#B45318">Intelligence</GradientText>{" "}
             Built Into Every Workflow
           </h2>
-          <p className="mt-4 text-[#94A3B8] text-lg leading-relaxed">
+          <p className="mt-4 text-[#A1A1AA] text-lg leading-relaxed">
             The Nucleus doesn&apos;t just store data. It understands it and helps your team act on it instantly.
           </p>
         </motion.div>
@@ -216,7 +216,7 @@ export function AISpotlight() {
                 <h3 className="text-lg font-bold text-white mb-3" style={{ letterSpacing: "-0.01em" }}>
                   {card.title}
                 </h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed flex-1">{card.description}</p>
+                <p className="text-sm text-[#A1A1AA] leading-relaxed flex-1">{card.description}</p>
 
                 {/* Demo area */}
                 {card.demo}

@@ -29,11 +29,11 @@ const GmailMockup = () => (
           key={i}
           className="flex items-start gap-3 p-3 rounded-lg border transition-all"
           style={{
-            background: email.unread ? "rgba(92,107,255,0.07)" : "rgba(255,255,255,0.02)",
-            borderColor: email.unread ? "rgba(92,107,255,0.2)" : "rgba(255,255,255,0.05)",
+            background: email.unread ? "rgba(200,101,34,0.07)" : "rgba(255,255,255,0.02)",
+            borderColor: email.unread ? "rgba(200,101,34,0.2)" : "rgba(255,255,255,0.05)",
           }}
         >
-          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#A78BFA] flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">
+          <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">
             {email.from.charAt(0)}
           </div>
           <div className="flex-1 min-w-0">
@@ -50,7 +50,7 @@ const GmailMockup = () => (
       <div className="flex items-center gap-2 p-2.5 rounded-lg border border-white/[0.07]" style={{ background: "rgba(52,168,83,0.08)" }}>
         <div className="w-5 h-5 rounded flex items-center justify-center text-[10px]" style={{ background: "rgba(52,168,83,0.2)" }}>📄</div>
         <div className="text-[10px] text-white/60 flex-1">Q4_Proposal_Final.pdf, Google Drive</div>
-        <span className="text-[10px] text-[#22C55E]">Linked</span>
+        <span className="text-[10px] text-[#A1A1AA]">Linked</span>
       </div>
     </div>
   </div>
@@ -59,10 +59,10 @@ const GmailMockup = () => (
 const WhatsAppMockup = () => (
   <div className="rounded-xl overflow-hidden border border-white/[0.1] max-w-[300px] mx-auto" style={{ background: "rgba(10,10,22,0.9)" }}>
     <div className="px-4 py-3 border-b border-white/[0.07] flex items-center gap-3" style={{ background: "rgba(17,24,39,0.8)" }}>
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center text-xs font-bold text-white">PS</div>
+      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-xs font-bold text-white">PS</div>
       <div>
         <div className="text-xs font-semibold text-white">Priya @ TechCorp</div>
-        <div className="text-[10px] text-[#25D366]">● Online</div>
+        <div className="text-[10px] text-[#C86522]">● Online</div>
       </div>
     </div>
     <div className="p-4 space-y-3">
@@ -76,7 +76,7 @@ const WhatsAppMockup = () => (
           <div
             className="max-w-[85%] px-3 py-2 rounded-xl text-[11px] text-white/90 leading-relaxed"
             style={{
-              background: msg.sent ? "rgba(92,107,255,0.4)" : "rgba(255,255,255,0.08)",
+              background: msg.sent ? "rgba(200,101,34,0.4)" : "rgba(255,255,255,0.08)",
               borderRadius: msg.sent ? "16px 4px 16px 16px" : "4px 16px 16px 16px",
             }}
           >
@@ -92,10 +92,10 @@ const WhatsAppMockup = () => (
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
-      className="mx-4 mb-4 p-2.5 rounded-lg border border-[#25D366]/30 flex items-center gap-2"
-      style={{ background: "rgba(37,211,102,0.08)" }}
+      className="mx-4 mb-4 p-2.5 rounded-lg border border-[#C86522]/30 flex items-center gap-2"
+      style={{ background: "rgba(200,101,34,0.08)" }}
     >
-      <MessageSquare size={12} className="text-[#25D366] flex-shrink-0" />
+      <MessageSquare size={12} className="text-[#C86522] flex-shrink-0" />
       <span className="text-[10px] text-white/70">New from Priya @ TechCorp, auto-logged to CRM</span>
     </motion.div>
   </div>
@@ -104,28 +104,28 @@ const WhatsAppMockup = () => (
 const AIMockup = () => (
   <div className="rounded-xl overflow-hidden border border-white/[0.1]" style={{ background: "rgba(10,10,22,0.9)" }}>
     <div className="px-4 py-3 border-b border-white/[0.07] flex items-center gap-2" style={{ background: "rgba(17,24,39,0.8)" }}>
-      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#00E5FF] flex items-center justify-center">
+      <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#C86522] to-[#E28A4B] flex items-center justify-center">
         <Zap size={10} className="text-white" />
       </div>
       <span className="text-xs font-semibold text-white">AI Co-Pilot</span>
       <div className="ml-auto flex items-center gap-1.5">
-        <div className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
-        <span className="text-[10px] text-[#22C55E]">Active</span>
+        <div className="w-1.5 h-1.5 rounded-full bg-[#A1A1AA] animate-pulse" />
+        <span className="text-[10px] text-[#A1A1AA]">Active</span>
       </div>
     </div>
     <div className="p-4 space-y-3">
       {[
         {
           icon: "🎯", title: "Priority Lead", name: "Meera Singh",
-          detail: "Opened your proposal 3 times today. High intent.", color: "#5C6BFF", score: 94,
+          detail: "Opened your proposal 3 times today. High intent.", color: "#C86522", score: 94,
         },
         {
           icon: "✉️", title: "Suggested Email", name: "Draft ready for Acme Corp",
-          detail: `"Hi Alex, following up on our conversation last week..."`, color: "#A78BFA", score: null,
+          detail: `"Hi Alex, following up on our conversation last week..."`, color: "#B45318", score: null,
         },
         {
           icon: "⏰", title: "Follow-up Reminder", name: "Ravi Kumar",
-          detail: "3 days since last contact. Best time to reach: 11am", color: "#00E5FF", score: null,
+          detail: "3 days since last contact. Best time to reach: 11am", color: "#E28A4B", score: null,
         },
       ].map((item, i) => (
         <motion.div
@@ -166,9 +166,9 @@ const KanbanMockup = () => (
     </div>
     <div className="p-3 grid grid-cols-3 gap-2">
       {[
-        { title: "Proposal", color: "#A78BFA", deals: [{ name: "GlobalTech", val: "$89K", tag: "Sent" }] },
-        { title: "Negotiation", color: "#5C6BFF", deals: [{ name: "StartupXYZ", val: "$55K", tag: "Counter" }] },
-        { title: "Closed Won", color: "#22C55E", deals: [{ name: "Acme Corp", val: "$120K", tag: "🎉 Won!" }] },
+        { title: "Proposal", color: "#B45318", deals: [{ name: "GlobalTech", val: "$89K", tag: "Sent" }] },
+        { title: "Negotiation", color: "#C86522", deals: [{ name: "StartupXYZ", val: "$55K", tag: "Counter" }] },
+        { title: "Closed Won", color: "#A1A1AA", deals: [{ name: "Acme Corp", val: "$120K", tag: "🎉 Won!" }] },
       ].map((col) => (
         <div key={col.title} className="flex flex-col gap-2">
           <div className="text-[10px] font-semibold uppercase tracking-wider" style={{ color: col.color }}>
@@ -193,12 +193,12 @@ const KanbanMockup = () => (
     {/* Animated drag */}
     <div className="px-3 pb-3">
       <motion.div
-        className="flex items-center gap-2 p-2.5 rounded-lg border border-[#A78BFA]/30 text-[10px] text-white/60"
-        style={{ background: "rgba(167,139,250,0.06)" }}
+        className="flex items-center gap-2 p-2.5 rounded-lg border border-[#B45318]/30 text-[10px] text-white/60"
+        style={{ background: "rgba(180,83,24,0.06)" }}
         animate={{ x: [0, 60, 140, 140, 140] }}
         transition={{ duration: 4, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
       >
-        <LayoutGrid size={10} className="text-[#A78BFA]" />
+        <LayoutGrid size={10} className="text-[#B45318]" />
         Moving GlobalTech → Negotiation…
       </motion.div>
     </div>
@@ -225,7 +225,7 @@ const features = [
   {
     side: "right",
     icon: <Phone size={20} />,
-    iconColor: "#25D366",
+    iconColor: "#C86522",
     tag: "Communication",
     title: "Talk to Clients Where They Are: WhatsApp & Calls, Built In",
     description:
@@ -241,7 +241,7 @@ const features = [
   {
     side: "left",
     icon: <Brain size={20} />,
-    iconColor: "#5C6BFF",
+    iconColor: "#C86522",
     tag: "AI Intelligence",
     title: "Your Team's AI Co-Pilot: Always One Step Ahead",
     description:
@@ -257,7 +257,7 @@ const features = [
   {
     side: "right",
     icon: <LayoutGrid size={20} />,
-    iconColor: "#A78BFA",
+    iconColor: "#B45318",
     tag: "Pipeline Management",
     title: "Visualize Your Pipeline. Move Deals Forward.",
     description:
@@ -319,7 +319,7 @@ const FeatureBlock = ({ feature, index }: { feature: typeof features[0]; index: 
         >
           {feature.title}
         </h3>
-        <p className="text-[#94A3B8] leading-relaxed mb-6">{feature.description}</p>
+        <p className="text-[#A1A1AA] leading-relaxed mb-6">{feature.description}</p>
 
         {/* Bullets */}
         <motion.ul
@@ -351,7 +351,7 @@ export function Features() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(92,107,255,0.05) 0%, transparent 60%)",
+            "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(200,101,34,0.05) 0%, transparent 60%)",
         }}
         aria-hidden
       />
@@ -365,7 +365,7 @@ export function Features() {
           viewport={viewportOnce}
           className="text-center max-w-2xl mx-auto mb-20"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">
             Features
           </p>
           <h2
@@ -375,7 +375,7 @@ export function Features() {
             One Platform.{" "}
             <GradientText>Endless Possibilities.</GradientText>
           </h2>
-          <p className="mt-4 text-[#94A3B8] text-lg leading-relaxed">
+          <p className="mt-4 text-[#A1A1AA] text-lg leading-relaxed">
             Everything your sales team needs to prospect, communicate, close, and grow in one unified workspace.
           </p>
         </motion.div>

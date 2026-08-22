@@ -10,12 +10,9 @@ const integrations = [
   { name: "Google Docs", color: "#4285F4" },
   { name: "Google Calendar", color: "#1A73E8" },
   { name: "Google Forms", color: "#7B4FCB" },
-  { name: "WhatsApp", color: "#25D366" },
-  { name: "Android", color: "#3DDC84" },
-  { name: "iOS", color: "#A2AAAD" },
-  { name: "Slack", color: "#4A154B" },
-  { name: "Zoom", color: "#2D8CFF" },
-  { name: "HubSpot", color: "#FF7A59" },
+  { name: "WhatsApp", color: "#C86522" },
+  { name: "HubSpot", color: "#C86522" },
+  { name: "Salesforce", color: "#C86522" },
 ];
 
 const LogoItem = ({ name, color }: { name: string; color: string }) => (
@@ -62,7 +59,7 @@ export function LogoMarquee() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4"
+          className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4"
         >
           Integrations
         </motion.p>

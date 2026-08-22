@@ -30,31 +30,21 @@ const NucleusLogo = () => (
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
     >
       <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-        <defs>
-          <radialGradient id="nucleus-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#00E5FF" />
-            <stop offset="100%" stopColor="#5C6BFF" />
-          </radialGradient>
-          <filter id="glow-logo">
-            <feGaussianBlur stdDeviation="1.5" result="blur" />
-            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-          </filter>
-        </defs>
         {/* Core */}
-        <circle cx="16" cy="16" r="4" fill="url(#nucleus-core)" filter="url(#glow-logo)" />
+        <circle cx="16" cy="16" r="4" fill="#C86522" />
         {/* Orbit 1 */}
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#5C6BFF" strokeWidth="1.2" strokeOpacity="0.7" fill="none" />
+        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.9" fill="none" />
         {/* Orbit 2 */}
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#A78BFA" strokeWidth="1.2" strokeOpacity="0.5" fill="none" transform="rotate(60 16 16)" />
+        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.72" fill="none" transform="rotate(60 16 16)" />
         {/* Orbit 3 */}
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#00E5FF" strokeWidth="1.2" strokeOpacity="0.4" fill="none" transform="rotate(120 16 16)" />
+        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.58" fill="none" transform="rotate(120 16 16)" />
         {/* Electrons */}
-        <circle cx="29" cy="16" r="1.5" fill="#5C6BFF" filter="url(#glow-logo)" />
-        <circle cx="9.5" cy="23.5" r="1.5" fill="#A78BFA" filter="url(#glow-logo)" />
-        <circle cx="9.5" cy="8.5" r="1.5" fill="#00E5FF" filter="url(#glow-logo)" />
+        <circle cx="29" cy="16" r="1.5" fill="#C86522" />
+        <circle cx="9.5" cy="23.5" r="1.5" fill="#C86522" />
+        <circle cx="9.5" cy="8.5" r="1.5" fill="#C86522" />
       </svg>
     </motion.div>
-    <span className="font-bold text-white text-lg tracking-tight">The Nucleus</span>
+    <span className="font-bold text-[#C86522] text-lg tracking-tight">The Nucleus</span>
   </div>
 );
 
@@ -88,7 +78,7 @@ export function Navbar() {
         style={{
           height: "72px",
           background: scrolled
-            ? "rgba(10, 10, 15, 0.85)"
+            ? "rgba(9, 9, 11, 0.94)"
             : "transparent",
           backdropFilter: scrolled ? "blur(24px)" : "none",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
@@ -137,7 +127,7 @@ export function Navbar() {
                         style={{
                           background: "rgba(10, 10, 20, 0.95)",
                           backdropFilter: "blur(32px)",
-                          border: "1px solid rgba(255,255,255,0.1)",
+                          border: "1px solid #3F3F46",
                           boxShadow: "0 24px 80px rgba(0,0,0,0.5)",
                         }}
                         role="menu"
@@ -149,10 +139,10 @@ export function Navbar() {
                               key={f.title}
                               href="#features"
                               role="menuitem"
-                              whileHover={{ backgroundColor: "rgba(92,107,255,0.08)" }}
+                              whileHover={{ backgroundColor: "rgba(200,101,34,0.08)" }}
                               className="flex items-start gap-3 p-3 rounded-xl transition-colors"
                             >
-                              <span className="mt-0.5 text-[#5C6BFF]">{f.icon}</span>
+                              <span className="mt-0.5 text-[#C86522]">{f.icon}</span>
                               <div>
                                 <div className="text-sm font-medium text-white">{f.title}</div>
                                 <div className="text-xs text-white/50 mt-0.5">{f.desc}</div>
@@ -162,10 +152,10 @@ export function Navbar() {
                         </div>
                         <div className="mt-3 pt-3 border-t border-white/08 flex items-center justify-between">
                           <span className="text-xs text-white/40 flex items-center gap-1.5">
-                            <Zap size={12} className="text-[#00E5FF]" />
+                            <Zap size={12} className="text-[#C86522]" />
                             AI-powered CRM platform
                           </span>
-                          <a href="#features" className="text-xs text-[#5C6BFF] hover:text-[#00E5FF] transition-colors font-medium">
+                          <a href="#features" className="text-xs text-[#C86522] hover:text-[#E28A4B] transition-colors font-medium">
                             See all features →
                           </a>
                         </div>
@@ -182,7 +172,7 @@ export function Navbar() {
                 >
                   {link.label}
                   <motion.span
-                    className="absolute bottom-1.5 left-4 right-4 h-px bg-[#5C6BFF]"
+                    className="absolute bottom-1.5 left-4 right-4 h-px bg-[#C86522]"
                     initial={{ scaleX: 0 }}
                     variants={{ hover: { scaleX: 1 } }}
                     style={{ transformOrigin: "left" }}

@@ -38,7 +38,7 @@ export function GlowButton({
 
   const variantClasses = {
     primary:
-      "bg-[#5C6BFF] text-white border border-[#5C6BFF] hover:shadow-[0_0_24px_rgba(92,107,255,0.5),0_0_60px_rgba(92,107,255,0.2)]",
+      "bg-white text-[#09090B] border border-white hover:bg-zinc-200",
     secondary:
       "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/50",
     ghost: "bg-transparent text-white border border-transparent hover:bg-white/5",
@@ -46,8 +46,8 @@ export function GlowButton({
 
   const baseClasses = `
     relative inline-flex items-center justify-center gap-2 font-medium
-    h-12 rounded-xl transition-all duration-300 select-none overflow-hidden
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5C6BFF]
+    h-12 rounded-lg transition-colors duration-200 select-none overflow-hidden
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white
     disabled:opacity-40 disabled:pointer-events-none
     ${sizeClasses[size]}
     ${variantClasses[variant]}
@@ -68,13 +68,6 @@ export function GlowButton({
         </motion.span>
       )}
 
-      {/* Shimmer sweep on primary */}
-      {variant === "primary" && (
-        <span
-          className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:translate-x-full transition-transform duration-700"
-          aria-hidden
-        />
-      )}
     </>
   );
 

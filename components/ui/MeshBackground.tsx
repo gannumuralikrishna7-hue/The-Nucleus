@@ -22,11 +22,11 @@ export function MeshBackground() {
     window.addEventListener("resize", resize);
 
     const blobs = [
-      { x: 0.2, y: 0.3, r: 0.35, color: "rgba(92,107,255,0.12)", speed: 0.0003 },
-      { x: 0.8, y: 0.2, r: 0.3,  color: "rgba(167,139,250,0.10)", speed: 0.0004 },
-      { x: 0.5, y: 0.7, r: 0.4,  color: "rgba(0,229,255,0.08)",   speed: 0.0002 },
-      { x: 0.1, y: 0.8, r: 0.25, color: "rgba(92,107,255,0.08)",  speed: 0.0005 },
-      { x: 0.9, y: 0.6, r: 0.3,  color: "rgba(167,139,250,0.07)", speed: 0.00035 },
+      { x: 0.2, y: 0.3, r: 0.35, color: "rgba(200,101,34,0.12)", speed: 0.0003 },
+      { x: 0.8, y: 0.2, r: 0.3,  color: "rgba(180,83,24,0.10)", speed: 0.0004 },
+      { x: 0.5, y: 0.7, r: 0.4,  color: "rgba(226,138,75,0.08)",   speed: 0.0002 },
+      { x: 0.1, y: 0.8, r: 0.25, color: "rgba(200,101,34,0.08)",  speed: 0.0005 },
+      { x: 0.9, y: 0.6, r: 0.3,  color: "rgba(180,83,24,0.07)", speed: 0.00035 },
     ];
 
     const draw = () => {

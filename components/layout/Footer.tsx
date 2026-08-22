@@ -30,21 +30,15 @@ const socialLinks = [
 const NucleusLogoSmall = () => (
   <div className="flex items-center gap-2">
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
-      <defs>
-        <radialGradient id="footer-nucleus-core" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#00E5FF" />
-          <stop offset="100%" stopColor="#5C6BFF" />
-        </radialGradient>
-      </defs>
-      <circle cx="16" cy="16" r="4" fill="url(#footer-nucleus-core)" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#5C6BFF" strokeWidth="1.2" strokeOpacity="0.6" fill="none" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#A78BFA" strokeWidth="1.2" strokeOpacity="0.4" fill="none" transform="rotate(60 16 16)" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#00E5FF" strokeWidth="1.2" strokeOpacity="0.35" fill="none" transform="rotate(120 16 16)" />
-      <circle cx="29" cy="16" r="1.5" fill="#5C6BFF" />
-      <circle cx="9.5" cy="23.5" r="1.5" fill="#A78BFA" />
-      <circle cx="9.5" cy="8.5" r="1.5" fill="#00E5FF" />
+      <circle cx="16" cy="16" r="4" fill="#C86522" />
+      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.9" fill="none" />
+      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.72" fill="none" transform="rotate(60 16 16)" />
+      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.58" fill="none" transform="rotate(120 16 16)" />
+      <circle cx="29" cy="16" r="1.5" fill="#C86522" />
+      <circle cx="9.5" cy="23.5" r="1.5" fill="#C86522" />
+      <circle cx="9.5" cy="8.5" r="1.5" fill="#C86522" />
     </svg>
-    <span className="font-bold text-white text-base tracking-tight">The Nucleus</span>
+    <span className="font-bold text-[#C86522] text-base tracking-tight">The Nucleus</span>
   </div>
 );
 

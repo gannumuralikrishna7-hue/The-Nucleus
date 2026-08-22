@@ -14,8 +14,8 @@ const testimonials = [
     role: "VP of Sales",
     company: "TechCorp India",
     initials: "PS",
-    gradFrom: "#5C6BFF",
-    gradTo: "#A78BFA",
+    gradFrom: "#C86522",
+    gradTo: "#B45318",
   },
   {
     quote:
@@ -24,8 +24,8 @@ const testimonials = [
     role: "Founder & CEO",
     company: "StartupXYZ",
     initials: "AJ",
-    gradFrom: "#00E5FF",
-    gradTo: "#5C6BFF",
+    gradFrom: "#E28A4B",
+    gradTo: "#C86522",
   },
   {
     quote:
@@ -34,8 +34,8 @@ const testimonials = [
     role: "Head of Business Development",
     company: "Acme Corp",
     initials: "RK",
-    gradFrom: "#A78BFA",
-    gradTo: "#00E5FF",
+    gradFrom: "#B45318",
+    gradTo: "#E28A4B",
   },
   {
     quote:
@@ -44,8 +44,8 @@ const testimonials = [
     role: "Customer Success Director",
     company: "Nexus Systems",
     initials: "SC",
-    gradFrom: "#22C55E",
-    gradTo: "#00E5FF",
+    gradFrom: "#A1A1AA",
+    gradTo: "#E28A4B",
   },
   {
     quote:
@@ -54,8 +54,8 @@ const testimonials = [
     role: "Sales Manager",
     company: "GlobalTech",
     initials: "AM",
-    gradFrom: "#5C6BFF",
-    gradTo: "#22C55E",
+    gradFrom: "#C86522",
+    gradTo: "#A1A1AA",
   },
   {
     quote:
@@ -64,8 +64,8 @@ const testimonials = [
     role: "Operations Lead",
     company: "InnovateCo",
     initials: "NV",
-    gradFrom: "#A78BFA",
-    gradTo: "#5C6BFF",
+    gradFrom: "#B45318",
+    gradTo: "#C86522",
   },
 ];
 
@@ -128,7 +128,7 @@ export function Testimonials() {
     <section className="relative py-24 overflow-hidden">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(167,139,250,0.04) 0%, transparent 70%)" }}
+        style={{ background: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)" }}
         aria-hidden
       />
 
@@ -141,7 +141,7 @@ export function Testimonials() {
           viewport={viewportOnce}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4">Testimonials</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Testimonials</p>
           <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
             Loved by Teams Who{" "}
             <GradientText>Move Fast</GradientText>
@@ -204,7 +204,7 @@ export function Testimonials() {
                   width: current === i ? "24px" : "8px",
                   height: "8px",
                   background: current === i
-                    ? "linear-gradient(90deg, #5C6BFF, #00E5FF)"
+                    ? "linear-gradient(90deg, #C86522, #E28A4B)"
                     : "rgba(255,255,255,0.15)",
                 }}
                 aria-label={`Go to testimonial ${i + 1}`}

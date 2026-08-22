@@ -8,63 +8,21 @@ import { fadeUp, viewportOnce } from "@/lib/animations";
 export function FinalCTA() {
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Quiet contrast band */}
       <div
         className="absolute inset-0"
         style={{
-          background:
-            "linear-gradient(135deg, #1a1040 0%, #0d0d2b 25%, #0a1628 50%, #0d102a 75%, #160d1f 100%)",
+          background: "#111113",
         }}
         aria-hidden
       />
-
-      {/* Animated gradient orbs */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        animate={{
-          background: [
-            "radial-gradient(ellipse 60% 60% at 20% 50%, rgba(92,107,255,0.2) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 80% 40%, rgba(167,139,250,0.15) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 50% 80%, rgba(0,229,255,0.1) 0%, transparent 60%)",
-            "radial-gradient(ellipse 60% 60% at 80% 50%, rgba(92,107,255,0.2) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 20% 40%, rgba(167,139,250,0.15) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 50% 20%, rgba(0,229,255,0.1) 0%, transparent 60%)",
-            "radial-gradient(ellipse 60% 60% at 50% 20%, rgba(92,107,255,0.2) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 50% 80%, rgba(167,139,250,0.15) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 20% 50%, rgba(0,229,255,0.1) 0%, transparent 60%)",
-          ],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        aria-hidden
-      />
-
-      {/* Top border glow */}
+      {/* Top border */}
       <div
         className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(92,107,255,0.5), rgba(0,229,255,0.3), transparent)" }}
+        style={{ background: "#3F3F46" }}
         aria-hidden
       />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: Math.random() * 3 + 1,
-              height: Math.random() * 3 + 1,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              background: ["rgba(92,107,255,0.6)", "rgba(0,229,255,0.6)", "rgba(167,139,250,0.6)"][Math.floor(Math.random() * 3)],
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.8, 0.3],
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
@@ -79,7 +37,7 @@ export function FinalCTA() {
             border: "1px solid rgba(255,255,255,0.1)",
           }}
         >
-          <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" aria-hidden />
+          <span className="w-2 h-2 rounded-full bg-[#A1A1AA] animate-pulse" aria-hidden />
           Join 2,000+ teams already growing faster
         </motion.div>
 
@@ -95,10 +53,7 @@ export function FinalCTA() {
           Ready to Build{" "}
           <span
             style={{
-              background: "linear-gradient(135deg, #5C6BFF 0%, #00E5FF 50%, #A78BFA 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              color: "#FFFFFF",
             }}
           >
             Stronger Relationships?
@@ -111,7 +66,7 @@ export function FinalCTA() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-[#94A3B8] mb-10 mx-auto max-w-xl leading-relaxed"
+          className="text-[#A1A1AA] mb-10 mx-auto max-w-xl leading-relaxed"
           style={{ fontSize: "clamp(16px, 2vw, 20px)" }}
         >
           Join thousands of teams who use The Nucleus to close more deals, faster. No credit card required.
@@ -127,12 +82,11 @@ export function FinalCTA() {
         >
           <motion.a
             href="#signup"
-            whileHover={{ scale: 1.04, boxShadow: "0 0 40px rgba(255,255,255,0.25), 0 0 80px rgba(92,107,255,0.2)" }}
+            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl text-lg font-bold text-[#0A0A0F] transition-all duration-300"
+            className="group inline-flex h-12 items-center gap-3 px-8 rounded-lg text-base font-bold text-[#09090B] transition-colors duration-200 bg-white hover:bg-zinc-200"
             style={{
-              background: "linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.9) 100%)",
-              boxShadow: "0 8px 32px rgba(255,255,255,0.15)",
+              background: "#FFFFFF",
             }}
           >
             Get Started for Free

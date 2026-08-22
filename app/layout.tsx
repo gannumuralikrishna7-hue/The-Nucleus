@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://thenucleuscrm.com"),
   title: "The Nucleus: CRM That Thinks, Talks, and Closes",
   description:
-    "The Nucleus brings your Gmail, WhatsApp, calls, Google Workspace, and AI intelligence into one unified workspace, so your team always knows the right move, at the right time.",
+    "AI intelligence applied directly to your Gmail, WhatsApp, and call history, so your team always knows the next best move.",
   keywords: [
     "CRM",
     "sales CRM",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: "https://thenucleuscrm.com",
     title: "The Nucleus: CRM That Thinks, Talks, and Closes",
     description:
-      "The Nucleus brings your Gmail, WhatsApp, calls, Google Workspace, and AI intelligence into one unified workspace.",
+      "AI intelligence applied directly to your Gmail, WhatsApp, and call history, so your team always knows the next best move.",
     siteName: "The Nucleus",
     images: [
       {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Nucleus: CRM That Thinks, Talks, and Closes",
     description:
-      "The Nucleus brings your Gmail, WhatsApp, calls, Google Workspace, and AI intelligence into one unified workspace.",
+      "AI intelligence applied directly to your Gmail, WhatsApp, and call history, so your team always knows the next best move.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -93,7 +93,7 @@ export default function RootLayout({
       <body className="bg-[#0A0A0F] text-white antialiased overflow-x-hidden">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#5C6BFF] focus:text-white focus:rounded-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[#C86522] focus:text-white focus:rounded-lg"
         >
           Skip to main content
         </a>

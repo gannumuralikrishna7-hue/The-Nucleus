@@ -16,7 +16,7 @@ const tabs = [
         <div className="p-4 border-b border-white/[0.06] flex items-center justify-between">
           <span className="text-sm font-semibold text-white">Active Leads, Q4 2025</span>
           <div className="flex items-center gap-2">
-            <div className="text-xs px-2 py-1 rounded-lg text-[#22C55E] font-medium" style={{ background: "rgba(34,197,94,0.1)" }}>
+            <div className="text-xs px-2 py-1 rounded-lg text-[#A1A1AA] font-medium" style={{ background: "rgba(161,161,170,0.1)" }}>
               48 active
             </div>
           </div>
@@ -30,10 +30,10 @@ const tabs = [
           ].map((lead) => (
             <div
               key={lead.name}
-              className="flex items-center gap-4 p-3 rounded-lg border border-white/[0.05] hover:border-[#5C6BFF]/30 hover:bg-[#5C6BFF]/5 transition-all duration-200"
+              className="flex items-center gap-4 p-3 rounded-lg border border-white/[0.05] hover:border-[#C86522]/30 hover:bg-[#C86522]/5 transition-all duration-200"
               style={{ background: "rgba(255,255,255,0.02)" }}
             >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#A78BFA] flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-[10px] font-bold text-white flex-shrink-0">
                 {lead.name.split(" ").map(n => n[0]).join("")}
               </div>
               <div className="flex-1 min-w-0">
@@ -41,21 +41,21 @@ const tabs = [
                 <div className="text-xs text-white/40">{lead.company}</div>
               </div>
               <div className="hidden sm:block">
-                <div className="text-xs font-semibold text-[#22C55E]">{lead.value}</div>
+                <div className="text-xs font-semibold text-[#A1A1AA]">{lead.value}</div>
               </div>
               <div className="hidden md:flex items-center gap-1">
                 <div
                   className="text-[10px] px-2 py-0.5 rounded-full font-medium"
                   style={{
-                    background: lead.stage === "Qualified" ? "rgba(92,107,255,0.15)" : lead.stage === "Proposal" ? "rgba(167,139,250,0.15)" : lead.stage === "Negotiation" ? "rgba(0,229,255,0.15)" : "rgba(148,163,184,0.15)",
-                    color: lead.stage === "Qualified" ? "#5C6BFF" : lead.stage === "Proposal" ? "#A78BFA" : lead.stage === "Negotiation" ? "#00E5FF" : "#94A3B8",
+                    background: lead.stage === "Qualified" ? "rgba(200,101,34,0.15)" : lead.stage === "Proposal" ? "rgba(180,83,24,0.15)" : lead.stage === "Negotiation" ? "rgba(226,138,75,0.15)" : "rgba(148,163,184,0.15)",
+                    color: lead.stage === "Qualified" ? "#C86522" : lead.stage === "Proposal" ? "#B45318" : lead.stage === "Negotiation" ? "#E28A4B" : "#A1A1AA",
                   }}
                 >
                   {lead.stage}
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <div className="text-xs font-bold" style={{ color: lead.score > 88 ? "#22C55E" : lead.score > 75 ? "#A78BFA" : "#94A3B8" }}>
+                <div className="text-xs font-bold" style={{ color: lead.score > 88 ? "#A1A1AA" : lead.score > 75 ? "#B45318" : "#A1A1AA" }}>
                   {lead.score}
                 </div>
                 <div className="text-[10px] text-white/25 hidden lg:block">{lead.lastContact}</div>
@@ -73,17 +73,17 @@ const tabs = [
     content: (
       <div className="rounded-xl overflow-hidden border border-white/[0.08]" style={{ background: "rgba(10,10,22,0.95)" }}>
         <div className="p-4 border-b border-white/[0.06] flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#00E5FF] flex items-center justify-center">
+          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#C86522] to-[#E28A4B] flex items-center justify-center">
             <Zap size={12} className="text-white" />
           </div>
           <span className="text-sm font-semibold text-white">AI Co-Pilot Insights</span>
-          <div className="ml-auto text-[10px] text-[#22C55E] font-medium">Live analysis</div>
+          <div className="ml-auto text-[10px] text-[#A1A1AA] font-medium">Live analysis</div>
         </div>
         <div className="p-4 space-y-3">
           {[
-            { priority: "URGENT", icon: "🎯", title: "Reach out to Meera Singh now", detail: "She opened your proposal 3 times in the last 4 hours. Strike while the iron is hot.", cta: "Send Message", color: "#5C6BFF" },
-            { priority: "HIGH", icon: "📞", title: "Call Ravi Kumar, best window today", detail: "AI predicts 78% response rate at 11am today based on his past engagement patterns.", cta: "Start Call", color: "#00E5FF" },
-            { priority: "MEDIUM", icon: "✉️", title: "Send follow-up to Acme Corp", detail: "It's been 3 days. Draft prepared based on your last conversation context.", cta: "Review Draft", color: "#A78BFA" },
+            { priority: "URGENT", icon: "🎯", title: "Reach out to Meera Singh now", detail: "She opened your proposal 3 times in the last 4 hours. Strike while the iron is hot.", cta: "Send Message", color: "#C86522" },
+            { priority: "HIGH", icon: "📞", title: "Call Ravi Kumar, best window today", detail: "AI predicts 78% response rate at 11am today based on his past engagement patterns.", cta: "Start Call", color: "#E28A4B" },
+            { priority: "MEDIUM", icon: "✉️", title: "Send follow-up to Acme Corp", detail: "It's been 3 days. Draft prepared based on your last conversation context.", cta: "Review Draft", color: "#B45318" },
           ].map((item) => (
             <div
               key={item.title}
@@ -116,10 +116,10 @@ const tabs = [
     content: (
       <div className="rounded-xl overflow-hidden border border-white/[0.08]" style={{ background: "rgba(10,10,22,0.95)" }}>
         <div className="p-4 border-b border-white/[0.06] flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center text-xs font-bold text-white">W</div>
+          <div className="w-8 h-8 rounded-full bg-[#C86522] flex items-center justify-center text-xs font-bold text-white">W</div>
           <span className="text-sm font-semibold text-white">WhatsApp Inbox</span>
           <div className="ml-auto flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-[#22C55E]" />
+            <div className="w-2 h-2 rounded-full bg-[#A1A1AA]" />
             <span className="text-xs text-white/50">7 unread</span>
           </div>
         </div>
@@ -131,7 +131,7 @@ const tabs = [
               { name: "Ravi K.", preview: "Thanks for the demo", time: "Yesterday", unread: 1 },
             ].map((chat) => (
               <div key={chat.name} className="flex items-center gap-2 px-3 py-2.5 border-b border-white/[0.05] hover:bg-white/5 transition-colors">
-                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#A78BFA] flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0">
                   {chat.name[0]}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -142,7 +142,7 @@ const tabs = [
                   <div className="text-[9px] text-white/40 truncate">{chat.preview}</div>
                 </div>
                 {chat.unread > 0 && (
-                  <div className="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center text-[8px] font-bold text-white flex-shrink-0">
+                  <div className="w-4 h-4 rounded-full bg-[#C86522] flex items-center justify-center text-[8px] font-bold text-white flex-shrink-0">
                     {chat.unread}
                   </div>
                 )}
@@ -161,7 +161,7 @@ const tabs = [
                   <div
                     className="text-[10px] px-2.5 py-1.5 rounded-xl max-w-[80%] text-white/80 leading-relaxed"
                     style={{
-                      background: m.sent ? "rgba(92,107,255,0.35)" : "rgba(255,255,255,0.07)",
+                      background: m.sent ? "rgba(200,101,34,0.35)" : "rgba(255,255,255,0.07)",
                     }}
                   >
                     {m.msg}
@@ -173,7 +173,7 @@ const tabs = [
               <div className="flex-1 rounded-lg px-3 py-2 text-[10px] text-white/30 border border-white/[0.08]" style={{ background: "rgba(255,255,255,0.03)" }}>
                 Type a message...
               </div>
-              <div className="w-7 h-7 rounded-full bg-[#5C6BFF] flex items-center justify-center flex-shrink-0">
+              <div className="w-7 h-7 rounded-full bg-[#C86522] flex items-center justify-center flex-shrink-0">
                 <ArrowRight size={12} className="text-white" />
               </div>
             </div>
@@ -190,10 +190,10 @@ const tabs = [
       <div className="rounded-xl overflow-hidden border border-white/[0.08] p-4" style={{ background: "rgba(10,10,22,0.95)" }}>
         <div className="grid grid-cols-4 gap-3">
           {[
-            { col: "Prospects", color: "#94A3B8", count: 12, cards: ["TechCorp Ltd, $45K", "Nexus Systems, $28K", "FinTechPro, $67K"] },
-            { col: "Qualified", color: "#5C6BFF", count: 8, cards: ["Acme Corp, $120K", "InnovateCo, $67K"] },
-            { col: "Proposal", color: "#A78BFA", count: 5, cards: ["GlobalTech, $89K", "StartupXYZ, $55K"] },
-            { col: "Closed", color: "#22C55E", count: 11, cards: ["DataSoft, $45K 🎉", "CloudBase, $78K 🎉"] },
+            { col: "Prospects", color: "#A1A1AA", count: 12, cards: ["TechCorp Ltd, $45K", "Nexus Systems, $28K", "FinTechPro, $67K"] },
+            { col: "Qualified", color: "#C86522", count: 8, cards: ["Acme Corp, $120K", "InnovateCo, $67K"] },
+            { col: "Proposal", color: "#B45318", count: 5, cards: ["GlobalTech, $89K", "StartupXYZ, $55K"] },
+            { col: "Closed", color: "#A1A1AA", count: 11, cards: ["DataSoft, $45K 🎉", "CloudBase, $78K 🎉"] },
           ].map((col) => (
             <div key={col.col} className="flex flex-col gap-2">
               <div className="flex items-center justify-between">
@@ -219,14 +219,14 @@ const tabs = [
       <div className="rounded-xl overflow-hidden border border-white/[0.08]" style={{ background: "rgba(10,10,22,0.95)" }}>
         <div className="p-4 border-b border-white/[0.06] flex items-center justify-between">
           <span className="text-sm font-semibold text-white">Contact Profile</span>
-          <div className="text-xs text-[#5C6BFF] font-medium">Full history</div>
+          <div className="text-xs text-[#C86522] font-medium">Full history</div>
         </div>
         <div className="p-4 flex gap-6">
           <div className="flex-shrink-0 flex flex-col items-center">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#5C6BFF] to-[#A78BFA] flex items-center justify-center text-lg font-bold text-white">PS</div>
+            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#C86522] to-[#B45318] flex items-center justify-center text-lg font-bold text-white">PS</div>
             <div className="mt-2 text-sm font-semibold text-white">Priya Sharma</div>
             <div className="text-xs text-white/40">VP Sales · TechCorp</div>
-            <div className="mt-2 text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: "rgba(92,107,255,0.15)", color: "#5C6BFF" }}>
+            <div className="mt-2 text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: "rgba(200,101,34,0.15)", color: "#C86522" }}>
               Score: 92
             </div>
           </div>
@@ -234,10 +234,10 @@ const tabs = [
             <div className="text-[10px] font-semibold uppercase tracking-widest text-white/30 mb-2">Activity Timeline</div>
             <div className="space-y-2">
               {[
-                { icon: "📧", text: "Email opened, Q4 Proposal", time: "2h ago", color: "#5C6BFF" },
-                { icon: "💬", text: "WhatsApp: 'Got the proposal!'", time: "10:05 AM", color: "#25D366" },
-                { icon: "📞", text: "Call logged, 12 min", time: "Yesterday", color: "#00E5FF" },
-                { icon: "📄", text: "Proposal sent, $120K deal", time: "2d ago", color: "#A78BFA" },
+                { icon: "📧", text: "Email opened, Q4 Proposal", time: "2h ago", color: "#C86522" },
+                { icon: "💬", text: "WhatsApp: 'Got the proposal!'", time: "10:05 AM", color: "#C86522" },
+                { icon: "📞", text: "Call logged, 12 min", time: "Yesterday", color: "#E28A4B" },
+                { icon: "📄", text: "Proposal sent, $120K deal", time: "2d ago", color: "#B45318" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <span className="text-sm flex-shrink-0">{item.icon}</span>
@@ -264,7 +264,7 @@ export function ProductDemo() {
     <section id="demo" className="relative py-24">
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(167,139,250,0.04) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(180,83,24,0.04) 0%, transparent 70%)" }}
         aria-hidden
       />
 
@@ -276,7 +276,7 @@ export function ProductDemo() {
           viewport={viewportOnce}
           className="text-center mb-12"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#5C6BFF] mb-4">Live Demo</p>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Live Demo</p>
           <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
             See <GradientText>The Nucleus</GradientText> in Action
           </h2>
@@ -301,18 +301,18 @@ export function ProductDemo() {
               onClick={() => setActiveTab(tab.id)}
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 relative"
               style={{
-                background: activeTab === tab.id ? "rgba(92,107,255,0.15)" : "rgba(255,255,255,0.04)",
+                background: activeTab === tab.id ? "rgba(200,101,34,0.15)" : "rgba(255,255,255,0.04)",
                 color: activeTab === tab.id ? "#fff" : "rgba(255,255,255,0.5)",
-                border: activeTab === tab.id ? "1px solid rgba(92,107,255,0.35)" : "1px solid transparent",
+                border: activeTab === tab.id ? "1px solid rgba(200,101,34,0.35)" : "1px solid transparent",
               }}
             >
-              <span style={{ color: activeTab === tab.id ? "#5C6BFF" : "inherit" }}>{tab.icon}</span>
+              <span style={{ color: activeTab === tab.id ? "#C86522" : "inherit" }}>{tab.icon}</span>
               {tab.label}
               {activeTab === tab.id && (
                 <motion.div
                   layoutId="tab-underline"
                   className="absolute bottom-0 left-4 right-4 h-0.5 rounded-full"
-                  style={{ background: "linear-gradient(90deg, #5C6BFF, #00E5FF)" }}
+                  style={{ background: "linear-gradient(90deg, #C86522, #E28A4B)" }}
                 />
               )}
             </button>
@@ -344,7 +344,7 @@ export function ProductDemo() {
         >
           <a
             href="#"
-            className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-white transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-[#A1A1AA] hover:text-white transition-colors group"
           >
             Or watch the full demo
             <motion.span

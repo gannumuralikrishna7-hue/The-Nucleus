@@ -11,9 +11,9 @@ interface GradientTextProps {
 
 export function GradientText({
   children,
-  from = "#5C6BFF",
-  via = "#00E5FF",
-  to = "#A78BFA",
+  from = "#FFFFFF",
+  via = "#FFFFFF",
+  to = "#FFFFFF",
   className = "",
   as: Tag = "span",
 }: GradientTextProps) {
@@ -21,10 +21,7 @@ export function GradientText({
     <Tag
       className={`inline ${className}`}
       style={{
-        background: `linear-gradient(135deg, ${from} 0%, ${via} 50%, ${to} 100%)`,
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundClip: "text",
+        color: to,
       }}
     >
       {children}
