@@ -38,16 +38,16 @@ export function GlowButton({
 
   const variantClasses = {
     primary:
-      "bg-white text-[#09090B] border border-white hover:bg-zinc-200",
+      "bg-[#F97316] text-white border border-[#F97316] shadow-[0_1px_2px_rgba(15,23,42,0.06)] hover:bg-[#EA580C] hover:border-[#EA580C] hover:shadow-[0_8px_24px_rgba(249,115,22,0.28)]",
     secondary:
-      "bg-transparent text-white border border-white/30 hover:bg-white/10 hover:border-white/50",
-    ghost: "bg-transparent text-white border border-transparent hover:bg-white/5",
+      "bg-white text-[#0F172A] border border-[#E2E8F0] hover:border-[#F97316]/50 hover:text-[#F97316] shadow-[0_1px_2px_rgba(15,23,42,0.04)]",
+    ghost: "bg-transparent text-[#0F172A] border border-transparent hover:bg-[#F8FAFC]",
   };
 
   const baseClasses = `
-    relative inline-flex items-center justify-center gap-2 font-medium
-    h-12 rounded-lg transition-colors duration-200 select-none overflow-hidden
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white
+    relative inline-flex items-center justify-center gap-2 font-semibold
+    h-12 rounded-xl transition-all duration-200 select-none
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2
     disabled:opacity-40 disabled:pointer-events-none
     ${sizeClasses[size]}
     ${variantClasses[variant]}
@@ -67,13 +67,12 @@ export function GlowButton({
           {icon}
         </motion.span>
       )}
-
     </>
   );
 
   const motionProps = {
-    whileHover: disabled ? {} : { scale: 1.03 },
-    whileTap: disabled ? {} : { scale: 0.97 },
+    whileHover: disabled ? {} : { scale: 1.02 },
+    whileTap: disabled ? {} : { scale: 0.98 },
     className: `group ${baseClasses}`,
     "aria-label": ariaLabel,
   };

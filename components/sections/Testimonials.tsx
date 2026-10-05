@@ -1,21 +1,19 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { GradientText } from "@/components/ui/GradientText";
+import { AccentText } from "@/components/ui/AccentText";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 
 const testimonials = [
   {
     quote:
-      "The Nucleus completely transformed how our sales team operates. Having Gmail, WhatsApp, and AI insights in one place is a game-changer. We closed 40% more deals last quarter.",
+      "The Nucleus completely transformed how our sales team operates. Having Gmail, WhatsApp, and AI insights in one place is a game changer. We closed 40% more deals last quarter.",
     name: "Priya Sharma",
     role: "VP of Sales",
     company: "TechCorp India",
     initials: "PS",
-    gradFrom: "#C86522",
-    gradTo: "#B45318",
   },
   {
     quote:
@@ -24,8 +22,6 @@ const testimonials = [
     role: "Founder & CEO",
     company: "StartupXYZ",
     initials: "AJ",
-    gradFrom: "#E28A4B",
-    gradTo: "#C86522",
   },
   {
     quote:
@@ -34,8 +30,6 @@ const testimonials = [
     role: "Head of Business Development",
     company: "Acme Corp",
     initials: "RK",
-    gradFrom: "#B45318",
-    gradTo: "#E28A4B",
   },
   {
     quote:
@@ -44,8 +38,6 @@ const testimonials = [
     role: "Customer Success Director",
     company: "Nexus Systems",
     initials: "SC",
-    gradFrom: "#A1A1AA",
-    gradTo: "#E28A4B",
   },
   {
     quote:
@@ -54,8 +46,6 @@ const testimonials = [
     role: "Sales Manager",
     company: "GlobalTech",
     initials: "AM",
-    gradFrom: "#C86522",
-    gradTo: "#A1A1AA",
   },
   {
     quote:
@@ -64,45 +54,38 @@ const testimonials = [
     role: "Operations Lead",
     company: "InnovateCo",
     initials: "NV",
-    gradFrom: "#B45318",
-    gradTo: "#C86522",
   },
 ];
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
     <div
-      className="flex flex-col p-7 rounded-2xl border flex-shrink-0 w-[340px] sm:w-[380px]"
-      style={{
-        background: "rgba(17,24,39,0.6)",
-        backdropFilter: "blur(20px)",
-        borderColor: "rgba(255,255,255,0.07)",
-      }}
+      className="flex flex-col p-7 rounded-2xl border flex-shrink-0 w-[340px] sm:w-[380px] bg-white"
+      style={{ borderColor: "#E2E8F0", boxShadow: "0 4px 16px rgba(15,23,42,0.04)" }}
     >
       {/* Stars */}
       <div className="flex gap-0.5 mb-4">
         {[...Array(5)].map((_, i) => (
-          <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
+          <Star key={i} size={14} className="fill-[#F97316] text-[#F97316]" />
         ))}
       </div>
 
       {/* Quote */}
-      <blockquote className="text-sm text-white/75 leading-relaxed flex-1 mb-6">
+      <blockquote className="text-sm text-[#0F172A] leading-relaxed flex-1 mb-6">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
       {/* Author */}
       <div className="flex items-center gap-3">
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
-          style={{ background: `linear-gradient(135deg, ${testimonial.gradFrom}, ${testimonial.gradTo})` }}
+          className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0 bg-[#0F172A]"
           aria-label={`${testimonial.name}'s avatar`}
         >
           {testimonial.initials}
         </div>
         <div>
-          <div className="text-sm font-semibold text-white">{testimonial.name}</div>
-          <div className="text-xs text-white/40">{testimonial.role} · {testimonial.company}</div>
+          <div className="text-sm font-semibold text-[#0F172A]">{testimonial.name}</div>
+          <div className="text-xs text-[#94A3B8]">{testimonial.role}, {testimonial.company}</div>
         </div>
       </div>
     </div>
@@ -125,13 +108,7 @@ export function Testimonials() {
   const next = () => setCurrent((c) => (c + 1) % total);
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)" }}
-        aria-hidden
-      />
-
+    <section className="relative py-24 overflow-hidden bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -141,10 +118,9 @@ export function Testimonials() {
           viewport={viewportOnce}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Testimonials</p>
-          <h2 className="text-4xl sm:text-5xl font-black text-white" style={{ letterSpacing: "-0.03em" }}>
-            Loved by Teams Who{" "}
-            <GradientText>Move Fast</GradientText>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#F97316] mb-4">Testimonials</p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0F172A]" style={{ letterSpacing: "-0.03em" }}>
+            Loved by Teams Who <AccentText>Move Fast</AccentText>
           </h2>
         </motion.div>
 
@@ -160,12 +136,12 @@ export function Testimonials() {
           {/* Fade masks */}
           <div
             className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to right, #0A0A0F, transparent)" }}
+            style={{ background: "linear-gradient(to right, #F8FAFC, transparent)" }}
             aria-hidden
           />
           <div
             className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: "linear-gradient(to left, #0A0A0F, transparent)" }}
+            style={{ background: "linear-gradient(to left, #F8FAFC, transparent)" }}
             aria-hidden
           />
 
@@ -185,7 +161,7 @@ export function Testimonials() {
         <div className="mt-8 flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="w-10 h-10 rounded-full flex items-center justify-center border border-white/[0.1] hover:border-white/30 hover:bg-white/5 transition-all text-white/60 hover:text-white"
+            className="w-10 h-10 rounded-full flex items-center justify-center border border-[#E2E8F0] hover:border-[#F97316]/40 hover:bg-white transition-all text-[#475569] hover:text-[#F97316]"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={18} />
@@ -203,9 +179,7 @@ export function Testimonials() {
                 style={{
                   width: current === i ? "24px" : "8px",
                   height: "8px",
-                  background: current === i
-                    ? "linear-gradient(90deg, #C86522, #E28A4B)"
-                    : "rgba(255,255,255,0.15)",
+                  background: current === i ? "#F97316" : "#CBD5E1",
                 }}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
@@ -214,7 +188,7 @@ export function Testimonials() {
 
           <button
             onClick={next}
-            className="w-10 h-10 rounded-full flex items-center justify-center border border-white/[0.1] hover:border-white/30 hover:bg-white/5 transition-all text-white/60 hover:text-white"
+            className="w-10 h-10 rounded-full flex items-center justify-center border border-[#E2E8F0] hover:border-[#F97316]/40 hover:bg-white transition-all text-[#475569] hover:text-[#F97316]"
             aria-label="Next testimonial"
           >
             <ChevronRight size={18} />

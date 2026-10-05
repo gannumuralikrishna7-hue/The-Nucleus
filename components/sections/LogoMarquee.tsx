@@ -1,96 +1,75 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, viewportOnce } from "@/lib/animations";
+import { type ReactNode } from "react";
+import {
+  Mail, HardDrive, Table, ClipboardList, Calendar, Video,
+  MessageCircle, Building2, Cloud, BarChart3,
+} from "lucide-react";
+import { fadeUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations";
 
-const integrations = [
-  { name: "Gmail", color: "#EA4335" },
-  { name: "Google Drive", color: "#34A853" },
-  { name: "Google Sheets", color: "#34A853" },
-  { name: "Google Docs", color: "#4285F4" },
-  { name: "Google Calendar", color: "#1A73E8" },
-  { name: "Google Forms", color: "#7B4FCB" },
-  { name: "WhatsApp", color: "#C86522" },
-  { name: "HubSpot", color: "#C86522" },
-  { name: "Salesforce", color: "#C86522" },
+const tools = [
+  { name: "Google Mail", icon: <Mail size={20} /> },
+  { name: "Google Drive", icon: <HardDrive size={20} /> },
+  { name: "Google Sheets", icon: <Table size={20} /> },
+  { name: "Google Forms", icon: <ClipboardList size={20} /> },
+  { name: "Google Calendar", icon: <Calendar size={20} /> },
+  { name: "Google Meet", icon: <Video size={20} /> },
+  { name: "WhatsApp", icon: <MessageCircle size={20} /> },
+  { name: "HubSpot", icon: <Building2 size={20} /> },
+  { name: "Salesforce", icon: <Cloud size={20} /> },
+  { name: "Apache Superset", icon: <BarChart3 size={20} /> },
 ];
 
-const LogoItem = ({ name, color }: { name: string; color: string }) => (
+const ToolItem = ({ name, icon }: { name: string; icon: ReactNode }) => (
   <motion.div
-    className="flex items-center gap-3 px-6 py-3 rounded-xl border border-white/[0.07] flex-shrink-0 group transition-all duration-300"
-    style={{ background: "rgba(17,24,39,0.5)", backdropFilter: "blur(8px)" }}
-    whileHover={{
-      borderColor: `${color}50`,
-      backgroundColor: `${color}10`,
-      y: -2,
-    }}
-    transition={{ duration: 0.2 }}
+    variants={staggerItem}
+    className="flex flex-col items-center gap-3 px-4 py-6 rounded-xl border border-[#E2E8F0] bg-white transition-all duration-200 hover:border-[#F97316]/40 hover:shadow-[0_8px_24px_rgba(15,23,42,0.06)] group"
   >
-    {/* Color dot icon */}
-    <div
-      className="w-6 h-6 rounded-md flex-shrink-0 transition-all duration-300"
-      style={{ background: `${color}30`, border: `1px solid ${color}40` }}
-    >
-      <div
-        className="w-full h-full rounded-md flex items-center justify-center text-[8px] font-black"
-        style={{ color }}
-      >
-        {name.charAt(0)}
-      </div>
+    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#F8FAFC] text-[#475569] group-hover:bg-[#FFF1E7] group-hover:text-[#F97316] transition-colors duration-200">
+      {icon}
     </div>
-    <span
-      className="text-sm font-medium whitespace-nowrap transition-colors duration-300"
-      style={{ color: "rgba(255,255,255,0.45)" }}
-    >
-      {name}
-    </span>
+    <span className="text-xs font-medium text-[#475569] text-center leading-tight">{name}</span>
   </motion.div>
 );
 
 export function LogoMarquee() {
-  const row1 = [...integrations, ...integrations];
-  const row2 = [...integrations.slice(6), ...integrations.slice(0, 6), ...integrations.slice(6), ...integrations.slice(0, 6)];
-
   return (
-    <section id="integrations" className="relative py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <motion.p
-          variants={fadeUp}
+    <section id="integrations" className="relative py-24 bg-[#F8FAFC]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="text-sm font-semibold uppercase tracking-widest text-[#F97316] mb-4"
+          >
+            Integrations
+          </motion.p>
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="text-3xl sm:text-4xl font-bold text-[#0F172A]"
+            style={{ letterSpacing: "-0.02em" }}
+          >
+            Works with the tools your team already loves
+          </motion.h2>
+        </div>
+
+        <motion.div
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3"
         >
-          Integrations
-        </motion.p>
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="text-3xl sm:text-4xl font-bold text-white"
-          style={{ letterSpacing: "-0.02em" }}
-        >
-          Works with the tools your team already loves
-        </motion.h2>
-      </div>
-
-      {/* Row 1, left to right */}
-      <div className="marquee-container overflow-hidden mb-4">
-        <div className="flex gap-3 animate-marquee w-max">
-          {row1.map((item, i) => (
-            <LogoItem key={`r1-${i}`} {...item} />
+          {tools.map((tool) => (
+            <ToolItem key={tool.name} {...tool} />
           ))}
-        </div>
-      </div>
-
-      {/* Row 2, right to left */}
-      <div className="marquee-container overflow-hidden">
-        <div className="flex gap-3 animate-marquee-reverse w-max">
-          {row2.map((item, i) => (
-            <LogoItem key={`r2-${i}`} {...item} />
-          ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

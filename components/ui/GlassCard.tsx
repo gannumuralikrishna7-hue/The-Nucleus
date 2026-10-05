@@ -7,17 +7,10 @@ interface GlassCardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  glow?: "none" | "indigo" | "cyan" | "violet";
+  glow?: "none" | "orange";
   padding?: "none" | "sm" | "md" | "lg";
   onClick?: () => void;
 }
-
-const glowMap = {
-  none: "",
-  indigo: "hover:border-zinc-500",
-  cyan: "hover:border-zinc-500",
-  violet: "hover:border-zinc-500",
-};
 
 const paddingMap = {
   none: "",
@@ -43,11 +36,11 @@ export function GlassCard({
       }
       onClick={onClick}
       className={`
-        relative rounded-lg overflow-hidden
-        bg-zinc-900 border border-zinc-800
-        transition-colors duration-200
-        ${hover ? "cursor-pointer" : ""}
-        ${glow !== "none" ? glowMap[glow] : ""}
+        relative rounded-2xl bg-white border border-[#E2E8F0]
+        shadow-[0_1px_3px_rgba(15,23,42,0.06)]
+        transition-all duration-300
+        ${hover ? "cursor-pointer hover:border-[#F97316]/30 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)]" : ""}
+        ${glow === "orange" ? "hover:shadow-[0_16px_40px_rgba(249,115,22,0.12)]" : ""}
         ${paddingMap[padding]}
         ${className}
       `}

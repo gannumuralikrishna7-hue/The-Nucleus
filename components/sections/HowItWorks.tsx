@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { LogIn, Users, Link2, Rocket } from "lucide-react";
-import { GradientText } from "@/components/ui/GradientText";
+import { AccentText } from "@/components/ui/AccentText";
 import { fadeUp, viewportOnce } from "@/lib/animations";
 
 const steps = [
@@ -13,31 +13,27 @@ const steps = [
     title: "Sign in with Gmail",
     description: "Instant access with your Google account. No complex setup, no IT ticket, no waiting.",
     color: "#4285F4",
-    emoji: "🔐",
   },
   {
     number: "02",
     icon: <Users size={22} />,
     title: "Invite Your Team",
     description: "Create user IDs and assign roles in seconds. Your whole team is onboarded in minutes.",
-    color: "#C86522",
-    emoji: "👥",
+    color: "#F97316",
   },
   {
     number: "03",
     icon: <Link2 size={22} />,
     title: "Connect Your Tools",
     description: "Google Workspace, WhatsApp, and calling, all connected with one click. Zero manual imports.",
-    color: "#B45318",
-    emoji: "🔗",
+    color: "#0F172A",
   },
   {
     number: "04",
     icon: <Rocket size={22} />,
     title: "Start Closing Deals",
     description: "AI guides your team from day one. See your pipeline, get suggestions, and close faster.",
-    color: "#A1A1AA",
-    emoji: "🚀",
+    color: "#16A34A",
   },
 ];
 
@@ -46,13 +42,7 @@ export function HowItWorks() {
   const isInView = useInView(lineRef, { once: true, margin: "-100px" });
 
   return (
-    <section className="relative py-24 lg:py-32">
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(200,101,34,0.04) 0%, transparent 70%)" }}
-        aria-hidden
-      />
-
+    <section className="relative py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
@@ -62,12 +52,11 @@ export function HowItWorks() {
           viewport={viewportOnce}
           className="text-center max-w-2xl mx-auto mb-20"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#C86522] mb-4">Get Started</p>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4" style={{ letterSpacing: "-0.03em" }}>
-            Up and Running in{" "}
-            <GradientText>Minutes</GradientText>
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#F97316] mb-4">Get Started</p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] mb-4" style={{ letterSpacing: "-0.03em" }}>
+            Up and Running in <AccentText>Minutes</AccentText>
           </h2>
-          <p className="text-[#A1A1AA] text-lg">
+          <p className="text-[#475569] text-lg">
             From sign-up to first closed deal, the fastest CRM onboarding you&apos;ve ever experienced.
           </p>
         </motion.div>
@@ -75,16 +64,13 @@ export function HowItWorks() {
         {/* Steps */}
         <div className="relative" ref={lineRef}>
           {/* Connecting line, desktop */}
-          <div className="hidden lg:block absolute top-12 left-0 right-0 h-px" style={{ background: "rgba(255,255,255,0.06)" }}>
+          <div className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-[#E2E8F0]">
             <motion.div
-              className="h-full"
-              style={{
-                background: "linear-gradient(90deg, #C86522, #B45318, #E28A4B, #A1A1AA)",
-                transformOrigin: "left",
-              }}
+              className="h-full bg-[#F97316]"
+              style={{ transformOrigin: "left" }}
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-              transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+              transition={{ duration: 1.4, ease: "easeOut", delay: 0.3 }}
             />
           </div>
 
@@ -103,19 +89,13 @@ export function HowItWorks() {
                 className="flex flex-col items-center text-center relative"
               >
                 {/* Icon circle */}
-                <motion.div
-                  className="relative z-10 w-24 h-24 rounded-full flex items-center justify-center mb-6 text-3xl"
-                  style={{
-                    background: `radial-gradient(circle, ${step.color}20 0%, transparent 70%)`,
-                    border: `2px solid ${step.color}40`,
-                    boxShadow: `0 0 30px ${step.color}20`,
-                  }}
-                  whileInView={{
-                    boxShadow: [`0 0 0px ${step.color}00`, `0 0 40px ${step.color}30`, `0 0 20px ${step.color}20`],
-                  }}
-                  transition={{ delay: i * 0.15 + 0.4, duration: 0.8 }}
+                <div
+                  className="relative z-10 w-24 h-24 rounded-full flex items-center justify-center mb-6 bg-white"
+                  style={{ border: `2px solid ${step.color}30` }}
                 >
-                  {/* Animated number ring */}
+                  <span style={{ color: step.color }}>{step.icon}</span>
+
+                  {/* Number badge */}
                   <motion.div
                     className="absolute -top-2 -right-2 w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-black text-white"
                     style={{ background: step.color }}
@@ -123,7 +103,7 @@ export function HowItWorks() {
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
                     transition={{
-                      delay: i * 0.15 + 0.5,
+                      delay: i * 0.15 + 0.3,
                       type: "spring",
                       stiffness: 400,
                       damping: 15,
@@ -131,19 +111,17 @@ export function HowItWorks() {
                   >
                     {step.number}
                   </motion.div>
+                </div>
 
-                  <span>{step.emoji}</span>
-                </motion.div>
-
-                <h3 className="text-lg font-bold text-white mb-3" style={{ letterSpacing: "-0.01em" }}>
+                <h3 className="text-lg font-bold text-[#0F172A] mb-3" style={{ letterSpacing: "-0.01em" }}>
                   {step.title}
                 </h3>
-                <p className="text-sm text-white/50 leading-relaxed">{step.description}</p>
+                <p className="text-sm text-[#475569] leading-relaxed">{step.description}</p>
 
                 {/* Arrow for desktop */}
                 {i < steps.length - 1 && (
                   <motion.div
-                    className="hidden lg:block absolute top-11 -right-3 text-white/20 text-lg z-20"
+                    className="hidden lg:block absolute top-11 -right-3 text-[#CBD5E1] text-lg z-20"
                     initial={{ opacity: 0, x: -10 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                     transition={{ delay: i * 0.4 + 0.8, duration: 0.4 }}
@@ -157,7 +135,7 @@ export function HowItWorks() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom note */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -165,24 +143,9 @@ export function HowItWorks() {
           viewport={viewportOnce}
           className="mt-16 text-center"
         >
-          <div
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-white/[0.08]"
-            style={{ background: "rgba(17,24,39,0.5)" }}
-          >
-            <div className="flex -space-x-1">
-              {["PS", "AJ", "RK"].map((init, i) => (
-                <div
-                  key={i}
-                  className="w-7 h-7 rounded-full border-2 border-[#0A0A0F] flex items-center justify-center text-[8px] font-bold text-white"
-                  style={{ background: `linear-gradient(135deg, ${["#C86522","#B45318","#E28A4B"][i]}, ${["#B45318","#E28A4B","#C86522"][i]})` }}
-                >
-                  {init}
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-white/60">
-              <span className="text-white font-semibold">2,000+ teams</span> onboarded this month · Average setup time:{" "}
-              <span className="text-[#A1A1AA] font-semibold">17 minutes</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC]">
+            <p className="text-sm text-[#475569]">
+              Average setup time: <span className="text-[#16A34A] font-semibold">17 minutes</span>
             </p>
           </div>
         </motion.div>

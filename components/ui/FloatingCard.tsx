@@ -31,11 +31,11 @@ export function FloatingCard({
         scale: { duration: 0.6, delay: delay + 1.2 },
         y: { duration: 0.6, delay: delay + 1.2 },
       }}
-      className={`relative rounded-lg overflow-hidden ${className}`}
+      className={`relative rounded-xl overflow-hidden ${className}`}
       style={{
-        background: "#18181B",
-        border: "1px solid #3F3F46",
-        boxShadow: "0 12px 30px rgba(0,0,0,0.24)",
+        background: "#FFFFFF",
+        border: "1px solid #E2E8F0",
+        boxShadow: "0 16px 40px rgba(15,23,42,0.10)",
       }}
     >
       {/* Continuous float */}

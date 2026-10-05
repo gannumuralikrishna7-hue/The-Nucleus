@@ -1,3 +1,5 @@
+import { NucleusLogo } from "@/components/ui/NucleusLogo";
+
 const footerLinks = {
   Product: ["Features", "Integrations", "Pricing", "Changelog", "Roadmap"],
   Company: ["About", "Blog", "Careers", "Press"],
@@ -29,24 +31,15 @@ const socialLinks = [
 
 const NucleusLogoSmall = () => (
   <div className="flex items-center gap-2">
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
-      <circle cx="16" cy="16" r="4" fill="#C86522" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.9" fill="none" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.72" fill="none" transform="rotate(60 16 16)" />
-      <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#C86522" strokeWidth="1.4" strokeOpacity="0.58" fill="none" transform="rotate(120 16 16)" />
-      <circle cx="29" cy="16" r="1.5" fill="#C86522" />
-      <circle cx="9.5" cy="23.5" r="1.5" fill="#C86522" />
-      <circle cx="9.5" cy="8.5" r="1.5" fill="#C86522" />
-    </svg>
-    <span className="font-bold text-[#C86522] text-base tracking-tight">The Nucleus</span>
+    <NucleusLogo size={28} />
+    <span className="font-bold text-[#0F172A] text-base tracking-tight">The Nucleus</span>
   </div>
 );
 
 export function Footer() {
   return (
     <footer
-      className="relative border-t border-white/[0.07]"
-      style={{ background: "rgba(10, 10, 20, 0.95)" }}
+      className="relative border-t border-[#E2E8F0] bg-[#F8FAFC]"
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +48,7 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="lg:col-span-1">
             <NucleusLogoSmall />
-            <p className="mt-4 text-sm text-white/50 leading-relaxed max-w-[200px]">
+            <p className="mt-4 text-sm text-[#475569] leading-relaxed max-w-[200px]">
               Where every relationship, conversation, and opportunity comes together.
             </p>
             {/* Socials */}
@@ -65,7 +58,7 @@ export function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center text-white/40 hover:text-white hover:bg-white/8 border border-white/[0.07] hover:border-white/20 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-[#475569] hover:text-[#F97316] bg-white hover:bg-white border border-[#E2E8F0] hover:border-[#F97316]/40 transition-all duration-200"
                 >
                   <s.Icon />
                 </a>
@@ -76,7 +69,7 @@ export function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
+              <h3 className="text-xs font-semibold text-[#0F172A] uppercase tracking-widest mb-4">
                 {category}
               </h3>
               <ul className="space-y-3">
@@ -84,7 +77,7 @@ export function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-white/50 hover:text-white transition-colors duration-200"
+                      className="text-sm text-[#475569] hover:text-[#F97316] transition-colors duration-200"
                     >
                       {link}
                     </a>
@@ -96,16 +89,12 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/30">
-            © 2025 The Nucleus. All rights reserved.
+        <div className="py-6 border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-[#94A3B8]">
+            © 2026 The Nucleus. All rights reserved.
           </p>
-          <p className="text-sm text-white/30">
-            Made with{" "}
-            <span className="text-red-400" aria-label="love">
-              ❤️
-            </span>{" "}
-            for teams who move fast
+          <p className="text-sm text-[#94A3B8]">
+            Built for teams who move fast.
           </p>
         </div>
       </div>

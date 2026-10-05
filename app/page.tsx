@@ -1,7 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Stats } from "@/components/sections/Stats";
 import { LogoMarquee } from "@/components/sections/LogoMarquee";
 import { Features } from "@/components/sections/Features";
 import { ProductDemo } from "@/components/sections/ProductDemo";
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <main id="main">
         <Hero />
-        <Stats />
         <LogoMarquee />
         <Features />
         <ProductDemo />
