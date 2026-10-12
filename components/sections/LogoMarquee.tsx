@@ -24,40 +24,29 @@ const tools = [
 const ToolItem = ({ name, icon }: { name: string; icon: ReactNode }) => (
   <motion.div
     variants={staggerItem}
-    className="flex flex-col items-center gap-3 px-4 py-6 rounded-xl border border-[#E2E8F0] bg-white transition-all duration-200 hover:border-[#F97316]/40 hover:shadow-[0_8px_24px_rgba(15,23,42,0.06)] group"
+    className="flex flex-col items-center gap-3 px-4 py-6 rounded-xl border border-[#E6DFD3] bg-[#FBF9F6] transition-colors duration-200 hover:border-[#C45C1A]/40 group"
   >
-    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#F8FAFC] text-[#475569] group-hover:bg-[#FFF1E7] group-hover:text-[#F97316] transition-colors duration-200">
+    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#F3EEE5] text-[#4A4238] group-hover:bg-[#F5E3D3] group-hover:text-[#C45C1A] transition-colors duration-200">
       {icon}
     </div>
-    <span className="text-xs font-medium text-[#475569] text-center leading-tight">{name}</span>
+    <span className="text-xs font-medium text-[#4A4238] text-center leading-tight">{name}</span>
   </motion.div>
 );
 
 export function LogoMarquee() {
   return (
-    <section id="integrations" className="relative py-24 bg-[#F8FAFC]">
+    <section id="integrations" className="relative py-24 bg-[#F3EEE5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            className="text-sm font-semibold uppercase tracking-widest text-[#F97316] mb-4"
-          >
-            Integrations
-          </motion.p>
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewportOnce}
-            className="text-3xl sm:text-4xl font-bold text-[#0F172A]"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            Works with the tools your team already loves
-          </motion.h2>
-        </div>
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          className="font-display mb-12 max-w-xl text-[#14110F]"
+          style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight: 500, letterSpacing: "-0.01em" }}
+        >
+          Works with the tools your team already loves.
+        </motion.h2>
 
         <motion.div
           variants={staggerContainer}

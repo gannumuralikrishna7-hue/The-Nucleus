@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #F8FAFC;
-  --color-ink: #0F172A;
-  --color-body: #475569;
-  --color-muted: #94A3B8;
-  --color-border: #E2E8F0;
-  --color-orange: #F97316;
-  --color-orange-dark: #EA580C;
-  --color-orange-soft: #FFF1E7;
-  --color-success: #16A34A;
+  --color-paper: #FBF9F6;
+  --color-paper-alt: #F3EEE5;
+  --color-ink: #14110F;
+  --color-body: #4A4238;
+  --color-muted: #8A8072;
+  --color-line: #E6DFD3;
+  --color-rust: #C45C1A;
+  --color-rust-dark: #8F4313;
+  --color-rust-soft: #F5E3D3;
+  --color-success: #3F7A4E;
+  --color-success-soft: #E9F1EA;
 
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
   --font-mono: var(--font-jetbrains);
 }
 
@@ -28,40 +30,40 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #0F172A;
+  background-color: #FBF9F6;
+  color: #14110F;
   font-family: var(--font-inter, 'Inter', system-ui, sans-serif);
   min-height: 100vh;
   overflow-x: hidden;
 }
 
+/* ─── Headline serif ─── */
+.font-display {
+  font-family: var(--font-fraunces, Georgia, serif);
+  font-optical-sizing: auto;
+}
+
 /* ─── Selection ─── */
 ::selection {
-  background: rgba(249, 115, 22, 0.15);
-  color: #0F172A;
+  background: rgba(196, 92, 26, 0.18);
+  color: #14110F;
 }
 
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F8FAFC; }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
-
-/* ─── Accent Text Utility ─── */
-/* Used to highlight a single keyword within a heading, never a whole heading. */
-.accent-text {
-  color: #F97316;
-}
+::-webkit-scrollbar-track { background: #F3EEE5; }
+::-webkit-scrollbar-thumb { background: #D8CEBE; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8A8072; }
 
 /* ─── Card & Surface ─── */
 .surface {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: #FBF9F6;
+  border: 1px solid #E6DFD3;
 }
 
 .surface-alt {
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  background: #F3EEE5;
+  border: 1px solid #E6DFD3;
 }
 
 /* ─── Keyframes ─── */
@@ -98,7 +100,7 @@ body {
 
 /* ─── Focus Styles ─── */
 :focus-visible {
-  outline: 2px solid #F97316;
+  outline: 2px solid #C45C1A;
   outline-offset: 3px;
   border-radius: 4px;
 }

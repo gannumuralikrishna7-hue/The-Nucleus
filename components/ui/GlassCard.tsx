@@ -36,11 +36,11 @@ export function GlassCard({
       }
       onClick={onClick}
       className={`
-        relative rounded-2xl bg-white border border-[#E2E8F0]
-        shadow-[0_1px_3px_rgba(15,23,42,0.06)]
+        relative rounded-2xl bg-[#FBF9F6] border border-[#E6DFD3]
+        shadow-[0_1px_3px_rgba(20,17,15,0.06)]
         transition-all duration-300
-        ${hover ? "cursor-pointer hover:border-[#F97316]/30 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)]" : ""}
-        ${glow === "orange" ? "hover:shadow-[0_16px_40px_rgba(249,115,22,0.12)]" : ""}
+        ${hover ? "cursor-pointer hover:border-[#C45C1A]/30 hover:shadow-[0_16px_40px_rgba(20,17,15,0.08)]" : ""}
+        ${glow === "orange" ? "hover:shadow-[0_16px_40px_rgba(196,92,26,0.12)]" : ""}
         ${paddingMap[padding]}
         ${className}
       `}

@@ -6,14 +6,13 @@ import { Features } from "@/components/sections/Features";
 import { ProductDemo } from "@/components/sections/ProductDemo";
 import { AISpotlight } from "@/components/sections/AISpotlight";
 import { MobileApp } from "@/components/sections/MobileApp";
-import { Pricing } from "@/components/sections/Pricing";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { HowItWorks } from "@/components/sections/HowItWorks";
+import { Onboarding } from "@/components/sections/Onboarding";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { EnquiryModalProvider } from "@/components/ui/EnquiryModal";
 
 export default function Home() {
   return (
-    <>
+    <EnquiryModalProvider>
       <Navbar />
       <main id="main">
         <Hero />
@@ -22,12 +21,10 @@ export default function Home() {
         <ProductDemo />
         <AISpotlight />
         <MobileApp />
-        <Pricing />
-        <Testimonials />
-        <HowItWorks />
+        <Onboarding />
         <FinalCTA />
       </main>
       <Footer />
-    </>
+    </EnquiryModalProvider>
   );
 }

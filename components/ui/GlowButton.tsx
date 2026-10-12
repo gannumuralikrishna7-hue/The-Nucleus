@@ -38,16 +38,16 @@ export function GlowButton({
 
   const variantClasses = {
     primary:
-      "bg-[#F97316] text-white border border-[#F97316] shadow-[0_1px_2px_rgba(15,23,42,0.06)] hover:bg-[#EA580C] hover:border-[#EA580C] hover:shadow-[0_8px_24px_rgba(249,115,22,0.28)]",
+      "bg-[#C45C1A] text-white border border-[#C45C1A] shadow-[0_1px_2px_rgba(20,17,15,0.06)] hover:bg-[#8F4313] hover:border-[#8F4313] hover:shadow-[0_8px_24px_rgba(196,92,26,0.28)]",
     secondary:
-      "bg-white text-[#0F172A] border border-[#E2E8F0] hover:border-[#F97316]/50 hover:text-[#F97316] shadow-[0_1px_2px_rgba(15,23,42,0.04)]",
-    ghost: "bg-transparent text-[#0F172A] border border-transparent hover:bg-[#F8FAFC]",
+      "bg-[#FBF9F6] text-[#14110F] border border-[#E6DFD3] hover:border-[#C45C1A]/50 hover:text-[#C45C1A] shadow-[0_1px_2px_rgba(20,17,15,0.04)]",
+    ghost: "bg-transparent text-[#14110F] border border-transparent hover:bg-[#F3EEE5]",
   };
 
   const baseClasses = `
     relative inline-flex items-center justify-center gap-2 font-semibold
     h-12 rounded-xl transition-all duration-200 select-none
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C45C1A] focus-visible:ring-offset-2
     disabled:opacity-40 disabled:pointer-events-none
     ${sizeClasses[size]}
     ${variantClasses[variant]}

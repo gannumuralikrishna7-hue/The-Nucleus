@@ -33,9 +33,9 @@ export function FloatingCard({
       }}
       className={`relative rounded-xl overflow-hidden ${className}`}
       style={{
-        background: "#FFFFFF",
-        border: "1px solid #E2E8F0",
-        boxShadow: "0 16px 40px rgba(15,23,42,0.10)",
+        background: "#FBF9F6",
+        border: "1px solid #E6DFD3",
+        boxShadow: "0 16px 40px rgba(20,17,15,0.10)",
       }}
     >
       {/* Continuous float */}

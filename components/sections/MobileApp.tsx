@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Phone, MessageSquare, Bell, Layers, ArrowRight } from "lucide-react";
-import { AccentText } from "@/components/ui/AccentText";
 import { slideFromLeft, slideFromRight, viewportOnce, staggerContainer, staggerItem } from "@/lib/animations";
 
 const AppleLogo = ({ size = 22 }: { size?: number }) => (
@@ -19,28 +18,28 @@ const GooglePlayLogo = ({ size = 22 }: { size?: number }) => (
 
 const PhoneMockup1 = () => (
   <div
-    className="relative w-[220px] mx-auto rounded-[36px] overflow-hidden border-2 border-[#0F172A]/10 bg-white"
-    style={{ boxShadow: "0 40px 80px rgba(15,23,42,0.16)" }}
+    className="relative w-[220px] mx-auto rounded-[36px] overflow-hidden border-2 border-[#14110F]/10 bg-[#FBF9F6]"
+    style={{ boxShadow: "0 40px 80px rgba(20,17,15,0.16)" }}
   >
     {/* Status bar */}
     <div className="flex items-center justify-between px-6 pt-4 pb-2">
-      <span className="text-[10px] text-[#475569] font-medium">9:41</span>
+      <span className="text-[10px] text-[#4A4238] font-medium">9:41</span>
       <div className="flex items-center gap-1">
-        <div className="w-3 h-1.5 rounded-sm border border-[#94A3B8] relative">
-          <div className="absolute left-0.5 top-0.5 bottom-0.5 w-1/2 rounded-sm bg-[#16A34A]" />
+        <div className="w-3 h-1.5 rounded-sm border border-[#8A8072] relative">
+          <div className="absolute left-0.5 top-0.5 bottom-0.5 w-1/2 rounded-sm bg-[#3F7A4E]" />
         </div>
       </div>
     </div>
 
     {/* Incoming call screen */}
     <div className="px-6 pb-8 flex flex-col items-center">
-      <div className="mt-6 mb-4 text-xs text-[#94A3B8] uppercase tracking-widest">Incoming Call</div>
-      <div className="w-20 h-20 rounded-full bg-[#0F172A] flex items-center justify-center text-2xl font-bold text-white mb-4">
+      <div className="mt-6 mb-4 text-xs text-[#8A8072] uppercase tracking-widest">Incoming Call</div>
+      <div className="w-20 h-20 rounded-full bg-[#14110F] flex items-center justify-center text-2xl font-bold text-white mb-4">
         RK
       </div>
-      <div className="text-base font-bold text-[#0F172A] mb-1">Ravi Kumar</div>
-      <div className="text-xs text-[#94A3B8] mb-1">Acme Corp</div>
-      <div className="text-[10px] px-2.5 py-1 rounded-full font-medium mb-8 bg-[#FFF1E7] text-[#F97316]">
+      <div className="text-base font-bold text-[#14110F] mb-1">Ravi Kumar</div>
+      <div className="text-xs text-[#8A8072] mb-1">Acme Corp</div>
+      <div className="text-[10px] px-2.5 py-1 rounded-full font-medium mb-8 bg-[#F5E3D3] text-[#C45C1A]">
         Lead Score: 87, High Value
       </div>
 
@@ -49,14 +48,14 @@ const PhoneMockup1 = () => (
         <div className="w-14 h-14 rounded-full bg-[#EF4444] flex items-center justify-center">
           <Phone size={20} className="text-white rotate-[135deg]" />
         </div>
-        <div className="w-14 h-14 rounded-full bg-[#16A34A] flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-[#3F7A4E] flex items-center justify-center">
           <Phone size={20} className="text-white" />
         </div>
       </div>
 
       {/* AI insight */}
-      <div className="mt-6 w-full p-3 rounded-xl border border-[#F97316]/20 text-[10px] text-[#475569] leading-relaxed bg-[#FFF1E7]">
-        <span className="text-[#F97316] font-semibold">AI: </span>
+      <div className="mt-6 w-full p-3 rounded-xl border border-[#C45C1A]/20 text-[10px] text-[#4A4238] leading-relaxed bg-[#F5E3D3]">
+        <span className="text-[#C45C1A] font-semibold">AI: </span>
         Last spoke 3 days ago. Ravi was interested in enterprise pricing. Mention the 30% Q4 discount.
       </div>
     </div>
@@ -65,21 +64,21 @@ const PhoneMockup1 = () => (
 
 const PhoneMockup2 = () => (
   <div
-    className="relative w-[220px] mx-auto rounded-[36px] overflow-hidden border-2 border-[#0F172A]/10 bg-white"
-    style={{ boxShadow: "0 40px 80px rgba(15,23,42,0.16)" }}
+    className="relative w-[220px] mx-auto rounded-[36px] overflow-hidden border-2 border-[#14110F]/10 bg-[#FBF9F6]"
+    style={{ boxShadow: "0 40px 80px rgba(20,17,15,0.16)" }}
   >
     {/* Status bar */}
     <div className="flex items-center justify-between px-6 pt-4 pb-2">
-      <span className="text-[10px] text-[#475569] font-medium">9:41</span>
+      <span className="text-[10px] text-[#4A4238] font-medium">9:41</span>
       <div className="text-[10px] text-[#25D366] font-semibold">WhatsApp</div>
     </div>
 
     {/* WhatsApp header */}
-    <div className="px-4 py-3 flex items-center gap-3 border-b border-[#E2E8F0] bg-[#F8FAFC]">
-      <div className="w-9 h-9 rounded-full bg-[#0F172A] flex items-center justify-center text-xs font-bold text-white">AC</div>
+    <div className="px-4 py-3 flex items-center gap-3 border-b border-[#E6DFD3] bg-[#F3EEE5]">
+      <div className="w-9 h-9 rounded-full bg-[#14110F] flex items-center justify-center text-xs font-bold text-white">AC</div>
       <div>
-        <div className="text-xs font-semibold text-[#0F172A]">Acme Corp Team</div>
-        <div className="text-[10px] text-[#16A34A]">3 members online</div>
+        <div className="text-xs font-semibold text-[#14110F]">Acme Corp Team</div>
+        <div className="text-[10px] text-[#3F7A4E]">3 members online</div>
       </div>
     </div>
 
@@ -96,22 +95,22 @@ const PhoneMockup2 = () => (
           <div
             className="text-[10px] px-2.5 py-1.5 rounded-xl max-w-[85%] leading-relaxed"
             style={{
-              background: m.sent ? "#FFF1E7" : "#FFFFFF",
-              color: "#0F172A",
-              border: m.sent ? "none" : "1px solid #E2E8F0",
+              background: m.sent ? "#F5E3D3" : "#FBF9F6",
+              color: "#14110F",
+              border: m.sent ? "none" : "1px solid #E6DFD3",
               borderRadius: m.sent ? "14px 4px 14px 14px" : "4px 14px 14px 14px",
             }}
           >
             {m.msg}
-            <div className="text-[8px] text-[#94A3B8] mt-0.5 text-right">{m.time}</div>
+            <div className="text-[8px] text-[#8A8072] mt-0.5 text-right">{m.time}</div>
           </div>
         </div>
       ))}
     </div>
 
     {/* Bottom bar */}
-    <div className="px-4 py-3 flex items-center gap-2 border-t border-[#E2E8F0]">
-      <div className="flex-1 rounded-full px-3 py-1.5 text-[10px] text-[#94A3B8] bg-[#F8FAFC]">
+    <div className="px-4 py-3 flex items-center gap-2 border-t border-[#E6DFD3]">
+      <div className="flex-1 rounded-full px-3 py-1.5 text-[10px] text-[#8A8072] bg-[#F3EEE5]">
         Type a message...
       </div>
       <div className="w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center">
@@ -130,7 +129,7 @@ const features = [
 
 export function MobileApp() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden bg-[#F8FAFC]">
+    <section className="relative py-24 lg:py-32 overflow-hidden bg-[#F3EEE5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text content */}
@@ -140,14 +139,13 @@ export function MobileApp() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <p className="text-sm font-semibold uppercase tracking-widest text-[#F97316] mb-4">Mobile App</p>
             <h2
-              className="text-4xl sm:text-5xl font-extrabold text-[#0F172A] mb-6"
-              style={{ letterSpacing: "-0.03em" }}
+              className="font-display text-[#14110F] mb-6"
+              style={{ fontSize: "clamp(32px, 4.2vw, 48px)", fontWeight: 500, letterSpacing: "-0.01em" }}
             >
-              The Nucleus Goes Where Your <AccentText>Team</AccentText> Goes
+              The Nucleus goes where your team goes.
             </h2>
-            <p className="text-[#475569] text-lg leading-relaxed mb-8">
+            <p className="text-[#4A4238] text-lg leading-relaxed mb-8">
               Never miss a deal because you stepped away from your desk. The full power of The Nucleus in your pocket, always on.
             </p>
 
@@ -159,9 +157,9 @@ export function MobileApp() {
               className="space-y-4 mb-10"
             >
               {features.map((f) => (
-                <motion.li key={f.text} variants={staggerItem} className="flex items-center gap-3 text-[#0F172A]">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-[#FFF1E7]">
-                    <span className="text-[#F97316]">{f.icon}</span>
+                <motion.li key={f.text} variants={staggerItem} className="flex items-center gap-3 text-[#14110F]">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 bg-[#F5E3D3]">
+                    <span className="text-[#C45C1A]">{f.icon}</span>
                   </div>
                   {f.text}
                 </motion.li>
@@ -174,20 +172,16 @@ export function MobileApp() {
                 { label: "Download on App Store", icon: <AppleLogo size={22} /> },
                 { label: "Get it on Google Play", icon: <GooglePlayLogo size={22} /> },
               ].map((badge) => (
-                <motion.a
+                <div
                   key={badge.label}
-                  href="#"
-                  whileHover={{ scale: 1.03, y: -2 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#E2E8F0] hover:border-[#F97316]/40 transition-all duration-200 bg-white"
-                  aria-label={badge.label}
+                  className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[#E6DFD3] bg-[#FBF9F6] cursor-default select-none"
                 >
-                  <span className="text-[#0F172A]">{badge.icon}</span>
+                  <span className="text-[#14110F]">{badge.icon}</span>
                   <div>
-                    <div className="text-[9px] text-[#94A3B8] uppercase tracking-widest">Available on</div>
-                    <div className="text-sm font-semibold text-[#0F172A]">{badge.label.split(" on ")[1] || badge.label.split(" it on ")[1]}</div>
+                    <div className="text-[9px] text-[#8A8072] uppercase tracking-widest">Available on</div>
+                    <div className="text-sm font-semibold text-[#14110F]">{badge.label.split(" on ")[1] || badge.label.split(" it on ")[1]}</div>
                   </div>
-                </motion.a>
+                </div>
               ))}
             </div>
           </motion.div>

@@ -8,13 +8,14 @@ interface NucleusLogoProps {
 }
 
 /**
- * The Nucleus mark: a core with three orbits and their electrons, an atom.
+ * The Nucleus mark: three intersecting orbital rings around a solid core.
  * Spins on hover as a small interactive touch.
  */
 export function NucleusLogo({ size = 32, className = "" }: NucleusLogoProps) {
+  const color = "#C45C1A";
   return (
     <motion.svg
-      viewBox="0 0 32 32"
+      viewBox="0 0 64 64"
       width={size}
       height={size}
       fill="none"
@@ -24,24 +25,10 @@ export function NucleusLogo({ size = 32, className = "" }: NucleusLogoProps) {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       aria-hidden="true"
     >
-      {/* Orbit 1 */}
-      <g>
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#F97316" strokeWidth="1.2" strokeOpacity="0.8" />
-        <circle cx="29" cy="16" r="1.6" fill="#F97316" />
-      </g>
-      {/* Orbit 2 */}
-      <g transform="rotate(60 16 16)">
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#F97316" strokeWidth="1.2" strokeOpacity="0.55" />
-        <circle cx="29" cy="16" r="1.6" fill="#F97316" fillOpacity="0.85" />
-      </g>
-      {/* Orbit 3 */}
-      <g transform="rotate(120 16 16)">
-        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="#F97316" strokeWidth="1.2" strokeOpacity="0.35" />
-        <circle cx="29" cy="16" r="1.6" fill="#F97316" fillOpacity="0.7" />
-      </g>
-
-      {/* Nucleus core */}
-      <circle cx="16" cy="16" r="3.4" fill="#F97316" />
+      <circle cx="32" cy="32" r="27" stroke={color} strokeWidth="2.2" />
+      <ellipse cx="32" cy="32" rx="27" ry="11" stroke={color} strokeWidth="2.2" transform="rotate(60 32 32)" />
+      <ellipse cx="32" cy="32" rx="27" ry="11" stroke={color} strokeWidth="2.2" transform="rotate(-60 32 32)" />
+      <circle cx="32" cy="32" r="6" fill={color} />
     </motion.svg>
   );
 }
